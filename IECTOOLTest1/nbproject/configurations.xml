@@ -17,11 +17,11 @@
         <itemPath>mcc_generated_files/memory.h</itemPath>
         <itemPath>mcc_generated_files/eusart.h</itemPath>
       </logicalFolder>
-      <itemPath>/home/kpit/MPLABXProjects/IECTOOLTest1/main.h</itemPath>
-      <itemPath>/home/kpit/MPLABXProjects/IECTOOLTest1/Buzzer_Ctrl.h</itemPath>
-      <itemPath>/home/kpit/MPLABXProjects/IECTOOLTest1/LED_Ctrl.h</itemPath>
-      <itemPath>/home/kpit/MPLABXProjects/IECTOOLTest1/Fan_Ctrl.h</itemPath>
-      <itemPath>/home/kpit/MPLABXProjects/IECTOOLTest1/CommunicationManager.h</itemPath>
+      <itemPath>Buzzer_Ctrl.h</itemPath>
+      <itemPath>CommunicationManager.h</itemPath>
+      <itemPath>Fan_Ctrl.h</itemPath>
+      <itemPath>LED_Ctrl.h</itemPath>
+      <itemPath>main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -44,10 +44,10 @@
         <itemPath>mcc_generated_files/eusart.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
-      <itemPath>/home/kpit/MPLABXProjects/IECTOOLTest1/Buzzer_Ctrl.c</itemPath>
-      <itemPath>/home/kpit/MPLABXProjects/IECTOOLTest1/LED_Ctrl.c</itemPath>
-      <itemPath>/home/kpit/MPLABXProjects/IECTOOLTest1/Fan_Ctrl.c</itemPath>
-      <itemPath>/home/kpit/MPLABXProjects/IECTOOLTest1/CommunicationManager.c</itemPath>
+      <itemPath>Buzzer_Ctrl.c</itemPath>
+      <itemPath>CommunicationManager.c</itemPath>
+      <itemPath>Fan_Ctrl.c</itemPath>
+      <itemPath>LED_Ctrl.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -66,7 +66,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>1.37</languageToolchainVersion>
+        <languageToolchainVersion>1.41</languageToolchainVersion>
         <platform>2</platform>
       </toolsSet>
       <compileType>
@@ -81,6 +81,8 @@
           <parseOnProdLoad>false</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
+        <subordinates>
+        </subordinates>
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
@@ -94,8 +96,11 @@
       <HI-TECH-COMP>
         <property key="asmlist" value="true"/>
         <property key="define-macros" value=""/>
+        <property key="disable-optimizations" value="false"/>
         <property key="extra-include-directories" value="mcc_generated_files"/>
+        <property key="favor-optimization-for" value="-speed,+space"/>
         <property key="identifier-length" value="255"/>
+        <property key="local-generation" value="false"/>
         <property key="operation-mode" value="free"/>
         <property key="opt-xc8-compiler-strict_ansi" value="false"/>
         <property key="optimization-assembler" value="true"/>
@@ -163,7 +168,6 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
-        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
@@ -173,24 +177,23 @@
         <property key="memories.eeprom" value="true"/>
         <property key="memories.flashdata" value="true"/>
         <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.end" value="0xfff"/>
-        <property key="memories.programmemory.partition2" value="true"/>
-        <property key="memories.programmemory.partition2.end"
-                  value="${memories.programmemory.partition2.end.value}"/>
-        <property key="memories.programmemory.partition2.start"
-                  value="${memories.programmemory.partition2.start.value}"/>
-        <property key="memories.programmemory.start" value="0x0"/>
+        <property key="memories.programmemory.ranges" value="0-fff"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmertogo.imagename" value=""/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmspeed" value="2"/>
         <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${programoptions.preservedataflash.ranges}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogramrange" value="false"/>
-        <property key="programoptions.preserveprogramrange.end" value="0xfff"/>
-        <property key="programoptions.preserveprogramrange.start" value="0x0"/>
         <property key="programoptions.preserveuserid" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>

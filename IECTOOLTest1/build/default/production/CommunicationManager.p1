@@ -1,31 +1,41 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"1532 /opt/microchip/xc8/v1.41/include/pic16f18344.h
-[v _T2CON `Vuc ~T0 @X0 0 e@31 ]
-"1513
-[v _PR2 `Vuc ~T0 @X0 0 e@30 ]
-"1494
-[v _TMR2 `Vuc ~T0 @X0 0 e@29 ]
-"553
-[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . TMR1IF TMR2IF BCL1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
-"552
-[u S35 `S36 1 ]
-[n S35 . . ]
-"564
-[v _PIR1bits `VS35 ~T0 @X0 0 e@17 ]
-"132 mcc_generated_files/tmr2.h
-[v _TMR2_StartTimer `(v ~T0 @X0 0 ef ]
-"1538 /opt/microchip/xc8/v1.41/include/pic16f18344.h
-[s S80 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
-[n S80 . T2CKPS TMR2ON T2OUTPS ]
-"1543
-[s S81 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S81 . T2CKPS0 T2CKPS1 . T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 ]
-"1537
-[u S79 `S80 1 `S81 1 ]
-[n S79 . . . ]
-"1553
-[v _T2CONbits `VS79 ~T0 @X0 0 e@31 ]
+"115 mcc_generated_files/eusart.h
+[v _EUSART_Read `(uc ~T0 @X0 0 ef ]
+"29 CommunicationManager.c
+[v _char2bytetovalue `(uc ~T0 @X0 0 ef3`uc`uc`*uc ]
+"38
+[v _PackageTxResponseNACK `(v ~T0 @X0 0 ef1`uc ]
+"30
+[v _char1bytetovalue `(uc ~T0 @X0 0 ef2`uc`*uc ]
+"248 mcc_generated_files/memory.h
+[v _DATAEE_ReadByte `(uc ~T0 @X0 0 ef1`ui ]
+"36 CommunicationManager.c
+[v _PackageTxResponseData `(v ~T0 @X0 0 ef3`uc`*uc`uc ]
+"222 mcc_generated_files/memory.h
+[v _DATAEE_WriteByte `(v ~T0 @X0 0 ef2`ui`uc ]
+"37 CommunicationManager.c
+[v _PackageTxResponseACK `(v ~T0 @X0 0 ef1`uc ]
+"229
+[c E7696 2 20 21 60 61 62 63 .. ]
+[n E7696 . TEMP_J6_4_ANA2 MULTIFUNC_SW_ANC4 DIR_SW_ANC5 channel_AVSS channel_Temp channel_DAC1 channel_FVR  ]
+"254 mcc_generated_files/adc.h
+[v _ADC_GetConversion `(ui ~T0 @X0 0 ef1`E7696 ]
+"23 LED_Ctrl.h
+[v _LedONStartConfig `(uc ~T0 @X0 0 ef3`uc`uc`uc ]
+"18 Buzzer_Ctrl.h
+[v _BuzzerStartConfig `(uc ~T0 @X0 0 ef2`uc`uc ]
+"21 Fan_Ctrl.h
+[v _FanStartConfig `(uc ~T0 @X0 0 ef1`uc ]
+"138 mcc_generated_files/eusart.h
+[v _EUSART_RX_Disable `(v ~T0 @X0 0 ef ]
+"19570 /opt/microchip/xc8/v1.41/include/pic16f18344.h
+[v _LATB6 `Vb ~T0 @X0 0 e@2158 ]
+"140 mcc_generated_files/eusart.h
+[v _EUSART_TX_Completed `(v ~T0 @X0 0 ef ]
+"135
+[v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
+"139
+[v _EUSART_RX_Enable `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7332,6 +7342,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 192: extern unsigned char __resetbits;
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
+[; ;CommunicationManager.h: 17: extern void ProtocolManager(void);
+"80 main.h
+[v _Msec_cnt `ui ~T0 @X0 1 e ]
+[v _Msec10_cnt `ui ~T0 @X0 1 e ]
+[v _DelayMsecCount `ui ~T0 @X0 1 e ]
+[; ;main.h: 80: unsigned int Msec_cnt,Msec10_cnt,DelayMsecCount;
+[; ;main.h: 82: void One_msec_task(void);
+[; ;pin_manager.h: 317: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 329: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -7361,6 +7380,45 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;interrupt_manager.h: 111: void interrupt INTERRUPT_InterruptManager(void);
+[; ;adc.h: 72: typedef uint16_t adc_result_t;
+[; ;adc.h: 86: typedef enum
+[; ;adc.h: 87: {
+[; ;adc.h: 88: TEMP_J6_4_ANA2 = 0x2,
+[; ;adc.h: 89: MULTIFUNC_SW_ANC4 = 0x14,
+[; ;adc.h: 90: DIR_SW_ANC5 = 0x15,
+[; ;adc.h: 91: channel_AVSS = 0x3C,
+[; ;adc.h: 92: channel_Temp = 0x3D,
+[; ;adc.h: 93: channel_DAC1 = 0x3E,
+[; ;adc.h: 94: channel_FVR = 0x3F
+[; ;adc.h: 95: } adc_channel_t;
+[; ;adc.h: 130: void ADC_Initialize(void);
+[; ;adc.h: 159: void ADC_StartConversion(adc_channel_t channel);
+[; ;adc.h: 191: bool ADC_IsConversionDone();
+[; ;adc.h: 224: adc_result_t ADC_GetConversionResult(void);
+[; ;adc.h: 254: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[; ;eusart.h: 95: void EUSART_Initialize(void);
+[; ;eusart.h: 115: uint8_t EUSART_Read(void);
+[; ;eusart.h: 135: void EUSART_Write(uint8_t txData);
+[; ;eusart.h: 138: void EUSART_RX_Disable();
+[; ;eusart.h: 139: void EUSART_RX_Enable();
+[; ;eusart.h: 140: void EUSART_TX_Completed();
+[; ;memory.h: 99: uint16_t FLASH_ReadWord(uint16_t flashAddr);
+[; ;memory.h: 128: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
+[; ;memory.h: 164: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
+[; ;memory.h: 189: void FLASH_EraseBlock(uint16_t startAddr);
+[; ;memory.h: 222: void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+[; ;memory.h: 248: uint8_t DATAEE_ReadByte(uint16_t bAdd);
+[; ;pwm5.h: 102: void PWM5_Initialize(void);
+[; ;pwm5.h: 129: void PWM5_LoadDutyValue(uint16_t dutyValue);
+[; ;tmr0.h: 106: void TMR0_Initialize(void);
+[; ;tmr0.h: 135: void TMR0_StartTimer(void);
+[; ;tmr0.h: 167: void TMR0_StopTimer(void);
+[; ;tmr0.h: 202: uint8_t TMR0_Read8bitTimer(void);
+[; ;tmr0.h: 241: void TMR0_Write8bitTimer(uint8_t timerVal);
+[; ;tmr0.h: 278: void TMR0_Load8bitPeriod(uint8_t periodVal);
+[; ;tmr0.h: 297: void TMR0_ISR(void);
+[; ;tmr0.h: 315: void TMR0_CallBack(void);
 [; ;tmr2.h: 103: void TMR2_Initialize(void);
 [; ;tmr2.h: 132: void TMR2_StartTimer(void);
 [; ;tmr2.h: 164: void TMR2_ToggleTimer(void);
@@ -7369,166 +7427,1918 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.h: 240: void TMR2_WriteTimer(uint8_t timerVal);
 [; ;tmr2.h: 292: void TMR2_LoadPeriodRegister(uint8_t periodVal);
 [; ;tmr2.h: 327: bool TMR2_HasOverflowOccured(void);
-"58 mcc_generated_files/tmr2.c
-[v _TMR2_Initialize `(v ~T0 @X0 1 ef ]
+[; ;mcc.h: 74: void SYSTEM_Initialize(void);
+[; ;mcc.h: 87: void OSCILLATOR_Initialize(void);
+[; ;Buzzer_Ctrl.h: 18: extern char BuzzerStartConfig(unsigned char BuzzDurationSec, unsigned char BuzzNumBeep);
+[; ;Buzzer_Ctrl.h: 19: extern void Buzzer_Control_msec(void);
+[; ;Buzzer_Ctrl.h: 20: extern char BuzzerStatusBusy(void);
+[; ;LED_Ctrl.h: 22: extern char LedONStatusBusy(void);
+[; ;LED_Ctrl.h: 23: extern char LedONStartConfig(unsigned char LEDColor, unsigned char LedONDurationSec, unsigned char LedONNumBlink);
+[; ;LED_Ctrl.h: 24: extern void LedON_Control_msec(void);
+[; ;Fan_Ctrl.h: 20: extern char FanStatusBusy(void);
+[; ;Fan_Ctrl.h: 21: extern char FanStartConfig(unsigned char FanONDurationSec);
+[; ;Fan_Ctrl.h: 22: extern void Fan_Control_Sec(void);
+"10 CommunicationManager.c
+[v _RxFrameDecodeState `uc ~T0 @X0 1 e ]
+[i _RxFrameDecodeState
+-> -> 0 `i `uc
+]
+[v _RxFrameType `uc ~T0 @X0 1 e ]
+[i _RxFrameType
+-> -> 114 `ui `uc
+]
+[v _RxFrameDataLen `uc ~T0 @X0 1 e ]
+[i _RxFrameDataLen
+-> -> 0 `i `uc
+]
+[v _RxFrameDataLenCnt `uc ~T0 @X0 1 e ]
+[i _RxFrameDataLenCnt
+-> -> 0 `i `uc
+]
+[; ;CommunicationManager.c: 10: unsigned char RxFrameDecodeState=0, RxFrameType='r',RxFrameDataLen=0,RxFrameDataLenCnt=0;
+"11
+[v _SetLEDcolor `uc ~T0 @X0 1 e ]
+[i _SetLEDcolor
+-> -> 82 `ui `uc
+]
+[v _SetLedONDurationSec `uc ~T0 @X0 1 e ]
+[i _SetLedONDurationSec
+-> -> 0 `i `uc
+]
+[v _SetLedONNumBlink `uc ~T0 @X0 1 e ]
+[i _SetLedONNumBlink
+-> -> 0 `i `uc
+]
+[; ;CommunicationManager.c: 11: unsigned char SetLEDcolor='R', SetLedONDurationSec=0, SetLedONNumBlink=0;
+"12
+[v _SetBuzzDurationSec `uc ~T0 @X0 1 e ]
+[i _SetBuzzDurationSec
+-> -> 0 `i `uc
+]
+[v _SetBuzzNumBeep `uc ~T0 @X0 1 e ]
+[i _SetBuzzNumBeep
+-> -> 0 `i `uc
+]
+[; ;CommunicationManager.c: 12: unsigned char SetBuzzDurationSec=0, SetBuzzNumBeep=0;
+"13
+[v _SetFANOnDurationSec `uc ~T0 @X0 1 e ]
+[i _SetFANOnDurationSec
+-> -> 0 `i `uc
+]
+[; ;CommunicationManager.c: 13: unsigned char SetFANOnDurationSec=0;
+"15
+[v _eepromWriteLen `uc ~T0 @X0 1 e ]
+[i _eepromWriteLen
+-> -> 0 `i `uc
+]
+[v _eepromWriteData `uc ~T0 @X0 -> 16 `i e ]
+[; ;CommunicationManager.c: 15: unsigned char eepromWriteLen=0,eepromWriteData[16];
+"16
+[v _eepromReadLen `uc ~T0 @X0 1 e ]
+[i _eepromReadLen
+-> -> 0 `i `uc
+]
+[v _eepromReadData `uc ~T0 @X0 -> 16 `i e ]
+[; ;CommunicationManager.c: 16: unsigned char eepromReadLen=0,eepromReadData[16];
+"17
+[v _eepromWriteAddr `ui ~T0 @X0 1 e ]
+[i _eepromWriteAddr
+-> -> 0 `i `ui
+]
+[v _eepromReadAddr `ui ~T0 @X0 1 e ]
+[i _eepromReadAddr
+-> -> 0 `i `ui
+]
+[; ;CommunicationManager.c: 17: unsigned int eepromWriteAddr=0,eepromReadAddr=0;
+"18
+[v _CommandError `uc ~T0 @X0 1 e ]
+[i _CommandError
+-> -> 0 `i `uc
+]
+[; ;CommunicationManager.c: 18: unsigned char CommandError=0;
+"21
+[v _ChannelNumber `uc ~T0 @X0 1 e ]
+[i _ChannelNumber
+-> -> 0 `i `uc
+]
+[v _ChannelNumberChar `uc ~T0 @X0 1 e ]
+[i _ChannelNumberChar
+-> -> 120 `ui `uc
+]
+[; ;CommunicationManager.c: 21: unsigned char ChannelNumber=0,ChannelNumberChar='x';
+"22
+[v _AnalogSenseRaw `ui ~T0 @X0 1 e ]
+[i _AnalogSenseRaw
+-> -> 0 `i `ui
+]
+[; ;CommunicationManager.c: 22: unsigned int AnalogSenseRaw=0x0000;
+"23
+[v _DigitalIN `uc ~T0 @X0 1 e ]
+[i _DigitalIN
+-> -> 0 `i `uc
+]
+[v _AnalogSenseRawByte `uc ~T0 @X0 -> 2 `i e ]
+[; ;CommunicationManager.c: 23: unsigned char DigitalIN=0,AnalogSenseRawByte[2];
+"25
+[v _RXChecksum `uc ~T0 @X0 1 e ]
+[i _RXChecksum
+-> -> 0 `i `uc
+]
+[v _Checksum `uc ~T0 @X0 1 e ]
+[i _Checksum
+-> -> 0 `i `uc
+]
+[; ;CommunicationManager.c: 25: unsigned char RXChecksum=0,Checksum=0;
+"26
+[v _highByteChar `uc ~T0 @X0 1 e ]
+[i _highByteChar
+-> -> 0 `i `uc
+]
+[v _lowByteChar `uc ~T0 @X0 1 e ]
+[i _lowByteChar
+-> -> 0 `i `uc
+]
+[; ;CommunicationManager.c: 26: unsigned char highByteChar=0,lowByteChar=0;
+"27
+[v _txPacketlength `uc ~T0 @X0 1 e ]
+[i _txPacketlength
+-> -> 0 `i `uc
+]
+[; ;CommunicationManager.c: 27: unsigned char txPacketlength=0;
+[; ;CommunicationManager.c: 29: unsigned char char2bytetovalue(unsigned char highBchar,unsigned char LowBchar,unsigned char *cksum);
+[; ;CommunicationManager.c: 30: unsigned char char1bytetovalue(unsigned char LowBChar,unsigned char *cksum);
+[; ;CommunicationManager.c: 31: unsigned char chartovalue(unsigned char charNibble);
+[; ;CommunicationManager.c: 32: unsigned char valuetocharHighNibble(unsigned char hexvalue);
+[; ;CommunicationManager.c: 33: unsigned char valuetocharLowNibble(unsigned char hexvalue);
+[; ;CommunicationManager.c: 34: unsigned char valtoasciichar(unsigned char hexvalue1);
+[; ;CommunicationManager.c: 36: void PackageTxResponseData(unsigned char frameType,unsigned char *data,unsigned char dataLen);
+[; ;CommunicationManager.c: 37: void PackageTxResponseACK(unsigned char frameType);
+[; ;CommunicationManager.c: 38: void PackageTxResponseNACK(unsigned char frameType);
+"40
+[v _ProtocolManager `(v ~T0 @X0 1 ef ]
+"41
+{
+[; ;CommunicationManager.c: 40: void ProtocolManager(void)
+[; ;CommunicationManager.c: 41: {
+[e :U _ProtocolManager ]
+[f ]
+"42
+[v _k `uc ~T0 @X0 1 a ]
+[; ;CommunicationManager.c: 42: unsigned char k=0;
+[e = _k -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 43: switch(RxFrameDecodeState)
+"43
+[e $U 926  ]
+[; ;CommunicationManager.c: 44: {
+"44
+{
+[; ;CommunicationManager.c: 45: case 0: if(EUSART_Read()=='$' && EUSART_Read()=='$')
+"45
+[e :U 927 ]
+[e $ ! && == -> ( _EUSART_Read ..  `ui -> 36 `ui == -> ( _EUSART_Read ..  `ui -> 36 `ui 928  ]
+[; ;CommunicationManager.c: 46: {
+"46
+{
+[; ;CommunicationManager.c: 47: RxFrameDecodeState=1;
+"47
+[e = _RxFrameDecodeState -> -> 1 `i `uc ]
+[; ;CommunicationManager.c: 48: RxFrameDataLenCnt=2;
+"48
+[e = _RxFrameDataLenCnt -> -> 2 `i `uc ]
+[; ;CommunicationManager.c: 49: Checksum=0;
+"49
+[e = _Checksum -> -> 0 `i `uc ]
+"50
+}
+[e :U 928 ]
+[; ;CommunicationManager.c: 50: }
+[; ;CommunicationManager.c: 51: break;
+"51
+[e $U 925  ]
+[; ;CommunicationManager.c: 53: case 1: RxFrameType=EUSART_Read();
+"53
+[e :U 929 ]
+[e = _RxFrameType ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 54: Checksum+=RxFrameType;
+"54
+[e =+ _Checksum _RxFrameType ]
+[; ;CommunicationManager.c: 55: if((RxFrameType=='r')||(RxFrameType=='w')||(RxFrameType=='A')||(RxFrameType=='I')||(RxFrameType=='B')||(RxFrameType=='L')||(RxFrameType=='F')||(RxFrameType=='R'))
+"55
+[e $ ! || || || || || || || == -> _RxFrameType `ui -> 114 `ui == -> _RxFrameType `ui -> 119 `ui == -> _RxFrameType `ui -> 65 `ui == -> _RxFrameType `ui -> 73 `ui == -> _RxFrameType `ui -> 66 `ui == -> _RxFrameType `ui -> 76 `ui == -> _RxFrameType `ui -> 70 `ui == -> _RxFrameType `ui -> 82 `ui 930  ]
+[; ;CommunicationManager.c: 56: {
+"56
+{
+[; ;CommunicationManager.c: 57: RxFrameDecodeState=2;
+"57
+[e = _RxFrameDecodeState -> -> 2 `i `uc ]
+[; ;CommunicationManager.c: 58: RxFrameDataLenCnt=RxFrameDataLenCnt+1;
+"58
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 1 `i `uc ]
 "59
+}
+[; ;CommunicationManager.c: 59: }
+[e $U 931  ]
+"60
+[e :U 930 ]
+[; ;CommunicationManager.c: 60: else
+[; ;CommunicationManager.c: 61: {
+"61
 {
-[; ;tmr2.c: 58: void TMR2_Initialize(void)
-[; ;tmr2.c: 59: {
-[e :U _TMR2_Initialize ]
-[f ]
-[; ;tmr2.c: 63: T2CON = 0x02;
+[; ;CommunicationManager.c: 62: RxFrameDecodeState=0;
+"62
+[e = _RxFrameDecodeState -> -> 0 `i `uc ]
 "63
-[e = _T2CON -> -> 2 `i `uc ]
-[; ;tmr2.c: 66: PR2 = 0x3F;
+}
+[e :U 931 ]
+[; ;CommunicationManager.c: 63: }
+[; ;CommunicationManager.c: 64: break;
+"64
+[e $U 925  ]
+[; ;CommunicationManager.c: 66: case 2: highByteChar=EUSART_Read();
 "66
-[e = _PR2 -> -> 63 `i `uc ]
-[; ;tmr2.c: 69: TMR2 = 0x00;
+[e :U 932 ]
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 67: lowByteChar=EUSART_Read();
+"67
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 68: RxFrameDataLen=(unsigned char)char2bytetovalue(highByteChar,lowByteChar,&Checksum);
+"68
+[e = _RxFrameDataLen ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _Checksum ]
+[; ;CommunicationManager.c: 69: RxFrameDataLenCnt=RxFrameDataLenCnt+2;
 "69
-[e = _TMR2 -> -> 0 `i `uc ]
-[; ;tmr2.c: 72: PIR1bits.TMR2IF = 0;
-"72
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-[; ;tmr2.c: 75: TMR2_StartTimer();
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 2 `i `uc ]
+[; ;CommunicationManager.c: 70: RxFrameDecodeState=3;
+"70
+[e = _RxFrameDecodeState -> -> 3 `i `uc ]
+[; ;CommunicationManager.c: 71: break;
+"71
+[e $U 925  ]
+[; ;CommunicationManager.c: 73: case 3: if(RxFrameType=='r')
+"73
+[e :U 933 ]
+[e $ ! == -> _RxFrameType `ui -> 114 `ui 934  ]
+[; ;CommunicationManager.c: 74: {
+"74
+{
+[; ;CommunicationManager.c: 75: RxFrameDecodeState=4;
 "75
-[e ( _TMR2_StartTimer ..  ]
-[; ;tmr2.c: 76: }
+[e = _RxFrameDecodeState -> -> 4 `i `uc ]
+[; ;CommunicationManager.c: 76: highByteChar=EUSART_Read();
 "76
-[e :UE 924 ]
-}
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 77: lowByteChar=EUSART_Read();
+"77
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 78: eepromReadAddr=((unsigned int)char2bytetovalue(highByteChar,lowByteChar,&Checksum))& 0x00FF;
 "78
-[v _TMR2_StartTimer `(v ~T0 @X0 1 ef ]
+[e = _eepromReadAddr & -> ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _Checksum `ui -> -> 255 `i `ui ]
+[; ;CommunicationManager.c: 79: RxFrameDataLenCnt=RxFrameDataLenCnt+2;
 "79
-{
-[; ;tmr2.c: 78: void TMR2_StartTimer(void)
-[; ;tmr2.c: 79: {
-[e :U _TMR2_StartTimer ]
-[f ]
-[; ;tmr2.c: 81: T2CONbits.TMR2ON = 1;
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 2 `i `uc ]
+[; ;CommunicationManager.c: 80: highByteChar=EUSART_Read();
+"80
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 81: lowByteChar=EUSART_Read();
 "81
-[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-[; ;tmr2.c: 82: }
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 82: eepromReadLen=(unsigned char)char2bytetovalue(highByteChar,lowByteChar,&Checksum);
 "82
-[e :UE 925 ]
-}
+[e = _eepromReadLen ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _Checksum ]
+[; ;CommunicationManager.c: 83: RxFrameDataLenCnt=RxFrameDataLenCnt+2;
+"83
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 2 `i `uc ]
+[; ;CommunicationManager.c: 84: CommandError=0;
 "84
-[v _TMR2_ToggleTimer `(v ~T0 @X0 1 ef ]
+[e = _CommandError -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 85: if(eepromReadLen>16)
 "85
+[e $ ! > -> _eepromReadLen `i -> 16 `i 935  ]
+[; ;CommunicationManager.c: 86: {
+"86
 {
-[; ;tmr2.c: 84: void TMR2_ToggleTimer(void)
-[; ;tmr2.c: 85: {
-[e :U _TMR2_ToggleTimer ]
-[f ]
-[; ;tmr2.c: 87: T2CONbits.TMR2ON ^= 1;
+[; ;CommunicationManager.c: 87: CommandError=1;
 "87
-[e =^ . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-[; ;tmr2.c: 88: }
+[e = _CommandError -> -> 1 `i `uc ]
+[; ;CommunicationManager.c: 88: DelayMsecCount=0;
 "88
-[e :UE 926 ]
+[e = _DelayMsecCount -> -> 0 `i `ui ]
+[; ;CommunicationManager.c: 89: while(EUSART_Read()!='\n'){if(DelayMsecCount>20){break;}};
+"89
+[e $U 936  ]
+[e :U 937 ]
+{
+[e $ ! > _DelayMsecCount -> -> 20 `i `ui 939  ]
+{
+[e $U 938  ]
 }
+[e :U 939 ]
+}
+[e :U 936 ]
+[e $ != -> ( _EUSART_Read ..  `ui -> 10 `ui 937  ]
+[e :U 938 ]
+[; ;CommunicationManager.c: 90: PackageTxResponseNACK(RxFrameType);
 "90
-[v _TMR2_StopTimer `(v ~T0 @X0 1 ef ]
-"91
-{
-[; ;tmr2.c: 90: void TMR2_StopTimer(void)
-[; ;tmr2.c: 91: {
-[e :U _TMR2_StopTimer ]
-[f ]
-[; ;tmr2.c: 93: T2CONbits.TMR2ON = 0;
+[e ( _PackageTxResponseNACK (1 _RxFrameType ]
+[; ;CommunicationManager.c: 92: RxFrameDecodeState=0;
+"92
+[e = _RxFrameDecodeState -> -> 0 `i `uc ]
 "93
-[e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-[; ;tmr2.c: 94: }
+}
+[e :U 935 ]
 "94
-[e :UE 927 ]
 }
+[; ;CommunicationManager.c: 93: }
+[; ;CommunicationManager.c: 94: }
+[e $U 940  ]
+"95
+[e :U 934 ]
+[; ;CommunicationManager.c: 95: else if(RxFrameType=='w')
+[e $ ! == -> _RxFrameType `ui -> 119 `ui 941  ]
+[; ;CommunicationManager.c: 96: {
 "96
-[v _TMR2_ReadTimer `(uc ~T0 @X0 1 ef ]
+{
+[; ;CommunicationManager.c: 97: RxFrameDecodeState=4;
 "97
-{
-[; ;tmr2.c: 96: uint8_t TMR2_ReadTimer(void)
-[; ;tmr2.c: 97: {
-[e :U _TMR2_ReadTimer ]
-[f ]
+[e = _RxFrameDecodeState -> -> 4 `i `uc ]
+[; ;CommunicationManager.c: 98: highByteChar=EUSART_Read();
 "98
-[v _readVal `uc ~T0 @X0 1 a ]
-[; ;tmr2.c: 98: uint8_t readVal;
-[; ;tmr2.c: 100: readVal = TMR2;
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 99: lowByteChar=EUSART_Read();
+"99
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 100: eepromWriteAddr=((unsigned int)char2bytetovalue(highByteChar,lowByteChar,&Checksum))& 0x00FF;
 "100
-[e = _readVal _TMR2 ]
-[; ;tmr2.c: 102: return readVal;
+[e = _eepromWriteAddr & -> ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _Checksum `ui -> -> 255 `i `ui ]
+[; ;CommunicationManager.c: 101: RxFrameDataLenCnt=RxFrameDataLenCnt+2;
+"101
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 2 `i `uc ]
+[; ;CommunicationManager.c: 102: highByteChar=EUSART_Read();
 "102
-[e ) _readVal ]
-[e $UE 928  ]
-[; ;tmr2.c: 103: }
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 103: lowByteChar=EUSART_Read();
 "103
-[e :UE 928 ]
-}
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 104: eepromWriteLen=(unsigned char)char2bytetovalue(highByteChar,lowByteChar,&Checksum);
+"104
+[e = _eepromWriteLen ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _Checksum ]
+[; ;CommunicationManager.c: 105: RxFrameDataLenCnt=RxFrameDataLenCnt+2;
 "105
-[v _TMR2_WriteTimer `(v ~T0 @X0 1 ef1`uc ]
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 2 `i `uc ]
+[; ;CommunicationManager.c: 106: CommandError=0;
 "106
-{
-[; ;tmr2.c: 105: void TMR2_WriteTimer(uint8_t timerVal)
-[; ;tmr2.c: 106: {
-[e :U _TMR2_WriteTimer ]
-"105
-[v _timerVal `uc ~T0 @X0 1 r1 ]
-"106
-[f ]
-[; ;tmr2.c: 108: TMR2 = timerVal;
+[e = _CommandError -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 107: if(eepromWriteLen>16)
+"107
+[e $ ! > -> _eepromWriteLen `i -> 16 `i 942  ]
+[; ;CommunicationManager.c: 108: {
 "108
-[e = _TMR2 _timerVal ]
-[; ;tmr2.c: 109: }
-"109
-[e :UE 929 ]
-}
-"111
-[v _TMR2_LoadPeriodRegister `(v ~T0 @X0 1 ef1`uc ]
-"112
 {
-[; ;tmr2.c: 111: void TMR2_LoadPeriodRegister(uint8_t periodVal)
-[; ;tmr2.c: 112: {
-[e :U _TMR2_LoadPeriodRegister ]
+[; ;CommunicationManager.c: 109: CommandError=1;
+"109
+[e = _CommandError -> -> 1 `i `uc ]
+[; ;CommunicationManager.c: 110: DelayMsecCount=0;
+"110
+[e = _DelayMsecCount -> -> 0 `i `ui ]
+[; ;CommunicationManager.c: 111: while(EUSART_Read()!='\n'){if(DelayMsecCount>20){break;}};
 "111
-[v _periodVal `uc ~T0 @X0 1 r1 ]
-"112
-[f ]
-[; ;tmr2.c: 113: PR2 = periodVal;
-"113
-[e = _PR2 _periodVal ]
-[; ;tmr2.c: 114: }
-"114
-[e :UE 930 ]
+[e $U 943  ]
+[e :U 944 ]
+{
+[e $ ! > _DelayMsecCount -> -> 20 `i `ui 946  ]
+{
+[e $U 945  ]
 }
+[e :U 946 ]
+}
+[e :U 943 ]
+[e $ != -> ( _EUSART_Read ..  `ui -> 10 `ui 944  ]
+[e :U 945 ]
+[; ;CommunicationManager.c: 112: PackageTxResponseNACK(RxFrameType);
+"112
+[e ( _PackageTxResponseNACK (1 _RxFrameType ]
+[; ;CommunicationManager.c: 114: RxFrameDecodeState=0;
+"114
+[e = _RxFrameDecodeState -> -> 0 `i `uc ]
+"115
+}
+[; ;CommunicationManager.c: 115: }
+[e $U 947  ]
 "116
-[v _TMR2_HasOverflowOccured `(uc ~T0 @X0 1 ef ]
+[e :U 942 ]
+[; ;CommunicationManager.c: 116: else
+[; ;CommunicationManager.c: 117: {
 "117
 {
-[; ;tmr2.c: 116: bool TMR2_HasOverflowOccured(void)
-[; ;tmr2.c: 117: {
-[e :U _TMR2_HasOverflowOccured ]
-[f ]
-"119
-[v _status `uc ~T0 @X0 1 a ]
-[; ;tmr2.c: 119: bool status = PIR1bits.TMR2IF;
-[e = _status . . _PIR1bits 0 1 ]
-[; ;tmr2.c: 120: if(status)
-"120
-[e $ ! != -> _status `i -> -> -> 0 `i `uc `i 932  ]
-[; ;tmr2.c: 121: {
-"121
+[; ;CommunicationManager.c: 118: for(k=0;k<eepromWriteLen;k++)
+"118
 {
-[; ;tmr2.c: 123: PIR1bits.TMR2IF = 0;
+[e = _k -> -> 0 `i `uc ]
+[e $U 951  ]
+"119
+[e :U 948 ]
+[; ;CommunicationManager.c: 119: {
+{
+[; ;CommunicationManager.c: 120: highByteChar=EUSART_Read();
+"120
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 121: lowByteChar=EUSART_Read();
+"121
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 122: eepromWriteData[k]=(unsigned char)char2bytetovalue(highByteChar,lowByteChar,&Checksum);
+"122
+[e = *U + &U _eepromWriteData * -> _k `ux -> -> # *U &U _eepromWriteData `ui `ux ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _Checksum ]
+[; ;CommunicationManager.c: 123: RxFrameDataLenCnt=RxFrameDataLenCnt+2;
 "123
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"124
-}
-[e :U 932 ]
-[; ;tmr2.c: 124: }
-[; ;tmr2.c: 125: return status;
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 2 `i `uc ]
 "125
-[e ) _status ]
-[e $UE 931  ]
-[; ;tmr2.c: 126: }
+}
+"118
+[e ++ _k -> -> 1 `i `uc ]
+[e :U 951 ]
+[e $ < -> _k `i -> _eepromWriteLen `i 948  ]
+[e :U 949 ]
+"125
+}
 "126
-[e :UE 931 ]
+}
+[e :U 947 ]
+"128
+}
+[; ;CommunicationManager.c: 125: }
+[; ;CommunicationManager.c: 126: }
+[; ;CommunicationManager.c: 128: }
+[e $U 952  ]
+"129
+[e :U 941 ]
+[; ;CommunicationManager.c: 129: else if(RxFrameType=='A')
+[e $ ! == -> _RxFrameType `ui -> 65 `ui 953  ]
+[; ;CommunicationManager.c: 130: {
+"130
+{
+[; ;CommunicationManager.c: 131: RxFrameDecodeState=4;
+"131
+[e = _RxFrameDecodeState -> -> 4 `i `uc ]
+[; ;CommunicationManager.c: 132: lowByteChar=EUSART_Read();
+"132
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 133: ChannelNumberChar=lowByteChar;
+"133
+[e = _ChannelNumberChar _lowByteChar ]
+[; ;CommunicationManager.c: 134: ChannelNumber=char1bytetovalue(lowByteChar,&Checksum);
+"134
+[e = _ChannelNumber ( _char1bytetovalue (2 , _lowByteChar &U _Checksum ]
+[; ;CommunicationManager.c: 135: RxFrameDataLenCnt=RxFrameDataLenCnt + 1;
+"135
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 1 `i `uc ]
+"136
+}
+[; ;CommunicationManager.c: 136: }
+[e $U 954  ]
+"137
+[e :U 953 ]
+[; ;CommunicationManager.c: 137: else if(RxFrameType=='I')
+[e $ ! == -> _RxFrameType `ui -> 73 `ui 955  ]
+[; ;CommunicationManager.c: 138: {
+"138
+{
+[; ;CommunicationManager.c: 139: RxFrameDecodeState=4;
+"139
+[e = _RxFrameDecodeState -> -> 4 `i `uc ]
+[; ;CommunicationManager.c: 140: lowByteChar=EUSART_Read();
+"140
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 141: ChannelNumberChar=lowByteChar;
+"141
+[e = _ChannelNumberChar _lowByteChar ]
+[; ;CommunicationManager.c: 142: ChannelNumber=char1bytetovalue(lowByteChar,&Checksum);
+"142
+[e = _ChannelNumber ( _char1bytetovalue (2 , _lowByteChar &U _Checksum ]
+[; ;CommunicationManager.c: 143: RxFrameDataLenCnt=RxFrameDataLenCnt + 1;
+"143
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 1 `i `uc ]
+"144
+}
+[; ;CommunicationManager.c: 144: }
+[e $U 956  ]
+"145
+[e :U 955 ]
+[; ;CommunicationManager.c: 145: else if(RxFrameType=='L')
+[e $ ! == -> _RxFrameType `ui -> 76 `ui 957  ]
+[; ;CommunicationManager.c: 146: {
+"146
+{
+[; ;CommunicationManager.c: 147: RxFrameDecodeState=4;
+"147
+[e = _RxFrameDecodeState -> -> 4 `i `uc ]
+[; ;CommunicationManager.c: 148: SetLEDcolor=EUSART_Read();
+"148
+[e = _SetLEDcolor ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 149: Checksum+=SetLEDcolor;
+"149
+[e =+ _Checksum _SetLEDcolor ]
+[; ;CommunicationManager.c: 150: highByteChar=EUSART_Read();
+"150
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 151: lowByteChar=EUSART_Read();
+"151
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 152: SetLedONDurationSec=(unsigned char)char2bytetovalue(highByteChar,lowByteChar,&Checksum);
+"152
+[e = _SetLedONDurationSec ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _Checksum ]
+[; ;CommunicationManager.c: 153: highByteChar=EUSART_Read();
+"153
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 154: lowByteChar=EUSART_Read();
+"154
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 155: SetLedONNumBlink=(unsigned char)char2bytetovalue(highByteChar,lowByteChar,&Checksum);
+"155
+[e = _SetLedONNumBlink ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _Checksum ]
+[; ;CommunicationManager.c: 156: RxFrameDataLenCnt=RxFrameDataLenCnt + 5;
+"156
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 5 `i `uc ]
+"157
+}
+[; ;CommunicationManager.c: 157: }
+[e $U 958  ]
+"158
+[e :U 957 ]
+[; ;CommunicationManager.c: 158: else if(RxFrameType=='B')
+[e $ ! == -> _RxFrameType `ui -> 66 `ui 959  ]
+[; ;CommunicationManager.c: 159: {
+"159
+{
+[; ;CommunicationManager.c: 160: RxFrameDecodeState=4;
+"160
+[e = _RxFrameDecodeState -> -> 4 `i `uc ]
+[; ;CommunicationManager.c: 161: highByteChar=EUSART_Read();
+"161
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 162: lowByteChar=EUSART_Read();
+"162
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 163: SetBuzzDurationSec=(unsigned char)char2bytetovalue(highByteChar,lowByteChar,&Checksum);
+"163
+[e = _SetBuzzDurationSec ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _Checksum ]
+[; ;CommunicationManager.c: 164: highByteChar=EUSART_Read();
+"164
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 165: lowByteChar=EUSART_Read();
+"165
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 166: SetBuzzNumBeep=(unsigned char)char2bytetovalue(highByteChar,lowByteChar,&Checksum);
+"166
+[e = _SetBuzzNumBeep ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _Checksum ]
+[; ;CommunicationManager.c: 167: RxFrameDataLenCnt=RxFrameDataLenCnt + 4;
+"167
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 4 `i `uc ]
+"168
+}
+[; ;CommunicationManager.c: 168: }
+[e $U 960  ]
+"169
+[e :U 959 ]
+[; ;CommunicationManager.c: 169: else if(RxFrameType=='F')
+[e $ ! == -> _RxFrameType `ui -> 70 `ui 961  ]
+[; ;CommunicationManager.c: 170: {
+"170
+{
+[; ;CommunicationManager.c: 171: RxFrameDecodeState=4;
+"171
+[e = _RxFrameDecodeState -> -> 4 `i `uc ]
+[; ;CommunicationManager.c: 172: highByteChar=EUSART_Read();
+"172
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 173: lowByteChar=EUSART_Read();
+"173
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 174: SetFANOnDurationSec=(unsigned char)char2bytetovalue(highByteChar,lowByteChar,&Checksum);
+"174
+[e = _SetFANOnDurationSec ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _Checksum ]
+[; ;CommunicationManager.c: 175: RxFrameDataLenCnt=RxFrameDataLenCnt + 2;
+"175
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 2 `i `uc ]
+"176
+}
+[; ;CommunicationManager.c: 176: }
+[e $U 962  ]
+"177
+[e :U 961 ]
+[; ;CommunicationManager.c: 177: else
+[; ;CommunicationManager.c: 178: {
+"178
+{
+[; ;CommunicationManager.c: 179: RxFrameDataLenCnt=0;
+"179
+[e = _RxFrameDataLenCnt -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 180: RxFrameDecodeState=0;
+"180
+[e = _RxFrameDecodeState -> -> 0 `i `uc ]
+"181
+}
+[e :U 962 ]
+[e :U 960 ]
+[e :U 958 ]
+[e :U 956 ]
+[e :U 954 ]
+[e :U 952 ]
+[e :U 940 ]
+[; ;CommunicationManager.c: 181: }
+[; ;CommunicationManager.c: 182: break;
+"182
+[e $U 925  ]
+[; ;CommunicationManager.c: 184: case 4:
+"184
+[e :U 963 ]
+[; ;CommunicationManager.c: 185: highByteChar=EUSART_Read();
+"185
+[e = _highByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 186: lowByteChar=EUSART_Read();
+"186
+[e = _lowByteChar ( _EUSART_Read ..  ]
+[; ;CommunicationManager.c: 187: RXChecksum=(unsigned char)char2bytetovalue(highByteChar,lowByteChar,&k);
+"187
+[e = _RXChecksum ( _char2bytetovalue (3 , , _highByteChar _lowByteChar &U _k ]
+[; ;CommunicationManager.c: 188: RxFrameDataLenCnt=RxFrameDataLenCnt+2;
+"188
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 2 `i `uc ]
+[; ;CommunicationManager.c: 189: Checksum=~Checksum;
+"189
+[e = _Checksum -> ~ -> _Checksum `i `uc ]
+[; ;CommunicationManager.c: 190: if((RXChecksum==(Checksum)) && (EUSART_Read()=='#') && (EUSART_Read()=='\r') && (EUSART_Read()=='\n'))
+"190
+[e $ ! && && && == -> _RXChecksum `i -> _Checksum `i == -> ( _EUSART_Read ..  `ui -> 35 `ui == -> ( _EUSART_Read ..  `ui -> 13 `ui == -> ( _EUSART_Read ..  `ui -> 10 `ui 964  ]
+[; ;CommunicationManager.c: 191: {
+"191
+{
+[; ;CommunicationManager.c: 192: RxFrameDecodeState=5;
+"192
+[e = _RxFrameDecodeState -> -> 5 `i `uc ]
+[; ;CommunicationManager.c: 193: RxFrameDataLenCnt=RxFrameDataLenCnt+3;
+"193
+[e = _RxFrameDataLenCnt -> + -> _RxFrameDataLenCnt `i -> 3 `i `uc ]
+"194
+}
+[; ;CommunicationManager.c: 194: }
+[e $U 965  ]
+"195
+[e :U 964 ]
+[; ;CommunicationManager.c: 195: else
+[; ;CommunicationManager.c: 196: {
+"196
+{
+[; ;CommunicationManager.c: 197: RxFrameDataLenCnt=0;
+"197
+[e = _RxFrameDataLenCnt -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 198: RxFrameDecodeState=0;
+"198
+[e = _RxFrameDecodeState -> -> 0 `i `uc ]
+"199
+}
+[e :U 965 ]
+[; ;CommunicationManager.c: 199: }
+[; ;CommunicationManager.c: 201: break;
+"201
+[e $U 925  ]
+[; ;CommunicationManager.c: 203: case 5:
+"203
+[e :U 966 ]
+[; ;CommunicationManager.c: 204: if(RxFrameDataLenCnt==RxFrameDataLen)
+"204
+[e $ ! == -> _RxFrameDataLenCnt `i -> _RxFrameDataLen `i 967  ]
+[; ;CommunicationManager.c: 205: {
+"205
+{
+[; ;CommunicationManager.c: 206: if(RxFrameType=='r')
+"206
+[e $ ! == -> _RxFrameType `ui -> 114 `ui 968  ]
+[; ;CommunicationManager.c: 207: {
+"207
+{
+[; ;CommunicationManager.c: 208: for(k=0;k<eepromReadLen;k++)
+"208
+{
+[e = _k -> -> 0 `i `uc ]
+[e $U 972  ]
+"209
+[e :U 969 ]
+[; ;CommunicationManager.c: 209: {
+{
+[; ;CommunicationManager.c: 210: eepromReadAddr=eepromReadAddr | 0xF000;
+"210
+[e = _eepromReadAddr | _eepromReadAddr -> 61440 `ui ]
+[; ;CommunicationManager.c: 211: eepromReadData[k]=DATAEE_ReadByte(eepromReadAddr+k);
+"211
+[e = *U + &U _eepromReadData * -> _k `ux -> -> # *U &U _eepromReadData `ui `ux ( _DATAEE_ReadByte (1 + _eepromReadAddr -> _k `ui ]
+"212
+}
+"208
+[e ++ _k -> -> 1 `i `uc ]
+[e :U 972 ]
+[e $ < -> _k `i -> _eepromReadLen `i 969  ]
+[e :U 970 ]
+"212
+}
+[; ;CommunicationManager.c: 212: }
+[; ;CommunicationManager.c: 213: PackageTxResponseData(RxFrameType,eepromReadData,eepromReadLen);
+"213
+[e ( _PackageTxResponseData (3 , , _RxFrameType &U _eepromReadData _eepromReadLen ]
+"214
+}
+[; ;CommunicationManager.c: 214: }
+[e $U 973  ]
+"215
+[e :U 968 ]
+[; ;CommunicationManager.c: 215: else if(RxFrameType=='w')
+[e $ ! == -> _RxFrameType `ui -> 119 `ui 974  ]
+[; ;CommunicationManager.c: 216: {
+"216
+{
+[; ;CommunicationManager.c: 217: for(k=0;k<eepromWriteLen;k++)
+"217
+{
+[e = _k -> -> 0 `i `uc ]
+[e $U 978  ]
+"218
+[e :U 975 ]
+[; ;CommunicationManager.c: 218: {
+{
+[; ;CommunicationManager.c: 219: eepromWriteAddr=eepromWriteAddr | 0xF000;
+"219
+[e = _eepromWriteAddr | _eepromWriteAddr -> 61440 `ui ]
+[; ;CommunicationManager.c: 220: DATAEE_WriteByte((eepromWriteAddr+k), eepromWriteData[k]);
+"220
+[e ( _DATAEE_WriteByte (2 , + _eepromWriteAddr -> _k `ui *U + &U _eepromWriteData * -> _k `ux -> -> # *U &U _eepromWriteData `ui `ux ]
+"221
+}
+"217
+[e ++ _k -> -> 1 `i `uc ]
+[e :U 978 ]
+[e $ < -> _k `i -> _eepromWriteLen `i 975  ]
+[e :U 976 ]
+"221
+}
+[; ;CommunicationManager.c: 221: }
+[; ;CommunicationManager.c: 222: PackageTxResponseACK(RxFrameType);
+"222
+[e ( _PackageTxResponseACK (1 _RxFrameType ]
+"223
+}
+[; ;CommunicationManager.c: 223: }
+[e $U 979  ]
+"224
+[e :U 974 ]
+[; ;CommunicationManager.c: 224: else if(RxFrameType=='A')
+[e $ ! == -> _RxFrameType `ui -> 65 `ui 980  ]
+[; ;CommunicationManager.c: 225: {
+"225
+{
+[; ;CommunicationManager.c: 226: if((ChannelNumberChar=='0')||(ChannelNumberChar=='*'))
+"226
+[e $ ! || == -> _ChannelNumberChar `ui -> 48 `ui == -> _ChannelNumberChar `ui -> 42 `ui 981  ]
+[; ;CommunicationManager.c: 227: {
+"227
+{
+[; ;CommunicationManager.c: 229: AnalogSenseRaw=ADC_GetConversion(TEMP_J6_4_ANA2);
+"229
+[e = _AnalogSenseRaw ( _ADC_GetConversion (1 . `E7696 0 ]
+[; ;CommunicationManager.c: 230: AnalogSenseRawByte[0]=(unsigned char)(AnalogSenseRaw & 0x00FF);
+"230
+[e = *U + &U _AnalogSenseRawByte * -> -> -> 0 `i `ui `ux -> -> # *U &U _AnalogSenseRawByte `ui `ux -> & _AnalogSenseRaw -> -> 255 `i `ui `uc ]
+[; ;CommunicationManager.c: 231: AnalogSenseRawByte[1]=(unsigned char)((AnalogSenseRaw>>8) & 0x00FF);
+"231
+[e = *U + &U _AnalogSenseRawByte * -> -> -> 1 `i `ui `ux -> -> # *U &U _AnalogSenseRawByte `ui `ux -> & >> _AnalogSenseRaw -> 8 `i -> -> 255 `i `ui `uc ]
+[; ;CommunicationManager.c: 232: PackageTxResponseData(RxFrameType,AnalogSenseRawByte,2);
+"232
+[e ( _PackageTxResponseData (3 , , _RxFrameType &U _AnalogSenseRawByte -> -> 2 `i `uc ]
+"233
+}
+[; ;CommunicationManager.c: 233: }
+[e $U 982  ]
+"234
+[e :U 981 ]
+[; ;CommunicationManager.c: 234: else
+[; ;CommunicationManager.c: 235: {
+"235
+{
+[; ;CommunicationManager.c: 236: PackageTxResponseNACK(RxFrameType);
+"236
+[e ( _PackageTxResponseNACK (1 _RxFrameType ]
+"237
+}
+[e :U 982 ]
+"238
+}
+[; ;CommunicationManager.c: 237: }
+[; ;CommunicationManager.c: 238: }
+[e $U 983  ]
+"239
+[e :U 980 ]
+[; ;CommunicationManager.c: 239: else if(RxFrameType=='I')
+[e $ ! == -> _RxFrameType `ui -> 73 `ui 984  ]
+[; ;CommunicationManager.c: 240: {
+"240
+{
+[; ;CommunicationManager.c: 241: DigitalIN=0x00;
+"241
+[e = _DigitalIN -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 242: AnalogSenseRaw=ADC_GetConversion(MULTIFUNC_SW_ANC4);
+"242
+[e = _AnalogSenseRaw ( _ADC_GetConversion (1 . `E7696 1 ]
+[; ;CommunicationManager.c: 243: if(AnalogSenseRaw > 0x100)
+"243
+[e $ ! > _AnalogSenseRaw -> -> 256 `i `ui 985  ]
+[; ;CommunicationManager.c: 244: DigitalIN |=0x01;
+"244
+[e =| _DigitalIN -> -> 1 `i `uc ]
+[e :U 985 ]
+[; ;CommunicationManager.c: 245: AnalogSenseRaw=ADC_GetConversion(DIR_SW_ANC5);
+"245
+[e = _AnalogSenseRaw ( _ADC_GetConversion (1 . `E7696 2 ]
+[; ;CommunicationManager.c: 246: if(AnalogSenseRaw > 0x100)
+"246
+[e $ ! > _AnalogSenseRaw -> -> 256 `i `ui 986  ]
+[; ;CommunicationManager.c: 247: DigitalIN |=0x02;
+"247
+[e =| _DigitalIN -> -> 2 `i `uc ]
+[e :U 986 ]
+[; ;CommunicationManager.c: 249: if(ChannelNumberChar=='0')
+"249
+[e $ ! == -> _ChannelNumberChar `ui -> 48 `ui 987  ]
+[; ;CommunicationManager.c: 250: {
+"250
+{
+[; ;CommunicationManager.c: 252: DigitalIN=DigitalIN&0x01;
+"252
+[e = _DigitalIN -> & -> _DigitalIN `i -> 1 `i `uc ]
+[; ;CommunicationManager.c: 253: PackageTxResponseData(RxFrameType,&DigitalIN,1);
+"253
+[e ( _PackageTxResponseData (3 , , _RxFrameType &U _DigitalIN -> -> 1 `i `uc ]
+"254
+}
+[; ;CommunicationManager.c: 254: }
+[e $U 988  ]
+"255
+[e :U 987 ]
+[; ;CommunicationManager.c: 255: else if(ChannelNumberChar=='1')
+[e $ ! == -> _ChannelNumberChar `ui -> 49 `ui 989  ]
+[; ;CommunicationManager.c: 256: {
+"256
+{
+[; ;CommunicationManager.c: 258: DigitalIN=(DigitalIN>>1)&0x01;
+"258
+[e = _DigitalIN -> & >> -> _DigitalIN `i -> 1 `i -> 1 `i `uc ]
+[; ;CommunicationManager.c: 259: PackageTxResponseData(RxFrameType,&DigitalIN,1);
+"259
+[e ( _PackageTxResponseData (3 , , _RxFrameType &U _DigitalIN -> -> 1 `i `uc ]
+"260
+}
+[; ;CommunicationManager.c: 260: }
+[e $U 990  ]
+"261
+[e :U 989 ]
+[; ;CommunicationManager.c: 261: else if(ChannelNumberChar=='*')
+[e $ ! == -> _ChannelNumberChar `ui -> 42 `ui 991  ]
+[; ;CommunicationManager.c: 262: {
+"262
+{
+[; ;CommunicationManager.c: 265: DigitalIN=(DigitalIN)&0x03;
+"265
+[e = _DigitalIN -> & -> _DigitalIN `i -> 3 `i `uc ]
+[; ;CommunicationManager.c: 266: PackageTxResponseData(RxFrameType,&DigitalIN,1);
+"266
+[e ( _PackageTxResponseData (3 , , _RxFrameType &U _DigitalIN -> -> 1 `i `uc ]
+"267
+}
+[; ;CommunicationManager.c: 267: }
+[e $U 992  ]
+"268
+[e :U 991 ]
+[; ;CommunicationManager.c: 268: else
+[; ;CommunicationManager.c: 269: {
+"269
+{
+[; ;CommunicationManager.c: 270: PackageTxResponseNACK(RxFrameType);
+"270
+[e ( _PackageTxResponseNACK (1 _RxFrameType ]
+"271
+}
+[e :U 992 ]
+[e :U 990 ]
+[e :U 988 ]
+"272
+}
+[; ;CommunicationManager.c: 271: }
+[; ;CommunicationManager.c: 272: }
+[e $U 993  ]
+"273
+[e :U 984 ]
+[; ;CommunicationManager.c: 273: else if(RxFrameType=='L')
+[e $ ! == -> _RxFrameType `ui -> 76 `ui 994  ]
+[; ;CommunicationManager.c: 274: {
+"274
+{
+[; ;CommunicationManager.c: 275: switch(SetLEDcolor)
+"275
+[e $U 996  ]
+[; ;CommunicationManager.c: 276: {
+"276
+{
+[; ;CommunicationManager.c: 277: case 'R':SetLEDcolor=0;break;
+"277
+[e :U 997 ]
+[e = _SetLEDcolor -> -> 0 `i `uc ]
+[e $U 995  ]
+[; ;CommunicationManager.c: 278: case 'G':SetLEDcolor=1;break;
+"278
+[e :U 998 ]
+[e = _SetLEDcolor -> -> 1 `i `uc ]
+[e $U 995  ]
+[; ;CommunicationManager.c: 279: case 'B':SetLEDcolor=2;break;
+"279
+[e :U 999 ]
+[e = _SetLEDcolor -> -> 2 `i `uc ]
+[e $U 995  ]
+"280
+}
+[; ;CommunicationManager.c: 280: }
+[e $U 995  ]
+"275
+[e :U 996 ]
+[e [\ _SetLEDcolor , $ -> -> 82 `ui `uc 997
+ , $ -> -> 71 `ui `uc 998
+ , $ -> -> 66 `ui `uc 999
+ 995 ]
+"280
+[e :U 995 ]
+[; ;CommunicationManager.c: 283: if(LedONStartConfig(SetLEDcolor, SetLedONDurationSec, SetLedONNumBlink) != 0)
+"283
+[e $ ! != -> ( _LedONStartConfig (3 , , _SetLEDcolor _SetLedONDurationSec _SetLedONNumBlink `i -> 0 `i 1000  ]
+[; ;CommunicationManager.c: 284: PackageTxResponseACK(RxFrameType);
+"284
+[e ( _PackageTxResponseACK (1 _RxFrameType ]
+[e $U 1001  ]
+"285
+[e :U 1000 ]
+[; ;CommunicationManager.c: 285: else
+[; ;CommunicationManager.c: 286: PackageTxResponseNACK(RxFrameType);
+"286
+[e ( _PackageTxResponseNACK (1 _RxFrameType ]
+[e :U 1001 ]
+"287
+}
+[; ;CommunicationManager.c: 287: }
+[e $U 1002  ]
+"288
+[e :U 994 ]
+[; ;CommunicationManager.c: 288: else if(RxFrameType=='B')
+[e $ ! == -> _RxFrameType `ui -> 66 `ui 1003  ]
+[; ;CommunicationManager.c: 289: {
+"289
+{
+[; ;CommunicationManager.c: 291: if(BuzzerStartConfig(SetBuzzDurationSec,SetBuzzNumBeep) != 0)
+"291
+[e $ ! != -> ( _BuzzerStartConfig (2 , _SetBuzzDurationSec _SetBuzzNumBeep `i -> 0 `i 1004  ]
+[; ;CommunicationManager.c: 292: PackageTxResponseACK(RxFrameType);
+"292
+[e ( _PackageTxResponseACK (1 _RxFrameType ]
+[e $U 1005  ]
+"293
+[e :U 1004 ]
+[; ;CommunicationManager.c: 293: else
+[; ;CommunicationManager.c: 294: PackageTxResponseNACK(RxFrameType);
+"294
+[e ( _PackageTxResponseNACK (1 _RxFrameType ]
+[e :U 1005 ]
+"295
+}
+[; ;CommunicationManager.c: 295: }
+[e $U 1006  ]
+"296
+[e :U 1003 ]
+[; ;CommunicationManager.c: 296: else if(RxFrameType=='F')
+[e $ ! == -> _RxFrameType `ui -> 70 `ui 1007  ]
+[; ;CommunicationManager.c: 297: {
+"297
+{
+[; ;CommunicationManager.c: 299: if(FanStartConfig(SetFANOnDurationSec) != 0)
+"299
+[e $ ! != -> ( _FanStartConfig (1 _SetFANOnDurationSec `i -> 0 `i 1008  ]
+[; ;CommunicationManager.c: 300: PackageTxResponseACK(RxFrameType);
+"300
+[e ( _PackageTxResponseACK (1 _RxFrameType ]
+[e $U 1009  ]
+"301
+[e :U 1008 ]
+[; ;CommunicationManager.c: 301: else
+[; ;CommunicationManager.c: 302: PackageTxResponseNACK(RxFrameType);
+"302
+[e ( _PackageTxResponseNACK (1 _RxFrameType ]
+[e :U 1009 ]
+"303
+}
+[e :U 1007 ]
+"305
+[e :U 1006 ]
+[e :U 1002 ]
+[e :U 993 ]
+[e :U 983 ]
+[e :U 979 ]
+[e :U 973 ]
+}
+[e :U 967 ]
+[; ;CommunicationManager.c: 303: }
+[; ;CommunicationManager.c: 305: }
+[; ;CommunicationManager.c: 307: RxFrameDataLenCnt=0;
+"307
+[e = _RxFrameDataLenCnt -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 308: RxFrameDecodeState=0;
+"308
+[e = _RxFrameDecodeState -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 310: break;
+"310
+[e $U 925  ]
+[; ;CommunicationManager.c: 312: default:RxFrameDecodeState=0;
+"312
+[e :U 1010 ]
+[e = _RxFrameDecodeState -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 313: RxFrameDataLenCnt=0;
+"313
+[e = _RxFrameDataLenCnt -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 314: break;
+"314
+[e $U 925  ]
+"315
+}
+[; ;CommunicationManager.c: 315: }
+[e $U 925  ]
+"43
+[e :U 926 ]
+[e [\ _RxFrameDecodeState , $ -> -> 0 `i `uc 927
+ , $ -> -> 1 `i `uc 929
+ , $ -> -> 2 `i `uc 932
+ , $ -> -> 3 `i `uc 933
+ , $ -> -> 4 `i `uc 963
+ , $ -> -> 5 `i `uc 966
+ 1010 ]
+"315
+[e :U 925 ]
+[; ;CommunicationManager.c: 316: }
+"316
+[e :UE 924 ]
+}
+"318
+[v _valtoasciichar `(uc ~T0 @X0 1 ef1`uc ]
+"319
+{
+[; ;CommunicationManager.c: 318: unsigned char valtoasciichar(unsigned char hexvalue1)
+[; ;CommunicationManager.c: 319: {
+[e :U _valtoasciichar ]
+"318
+[v _hexvalue1 `uc ~T0 @X0 1 r1 ]
+"319
+[f ]
+"320
+[v _hexval `uc ~T0 @X0 1 a ]
+[; ;CommunicationManager.c: 320: unsigned char hexval='0';
+[e = _hexval -> -> 48 `ui `uc ]
+[; ;CommunicationManager.c: 321: switch((unsigned char)hexvalue1)
+"321
+[e $U 1013  ]
+[; ;CommunicationManager.c: 322: {
+"322
+{
+[; ;CommunicationManager.c: 323: case 0x00: hexval= '0'; break;
+"323
+[e :U 1014 ]
+[e = _hexval -> -> 48 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 324: case 0x01: hexval= '1'; break;
+"324
+[e :U 1015 ]
+[e = _hexval -> -> 49 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 325: case 0x02: hexval= '2'; break;
+"325
+[e :U 1016 ]
+[e = _hexval -> -> 50 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 326: case 0x03: hexval= '3'; break;
+"326
+[e :U 1017 ]
+[e = _hexval -> -> 51 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 327: case 0x04: hexval= '4'; break;
+"327
+[e :U 1018 ]
+[e = _hexval -> -> 52 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 328: case 0x05: hexval= '5'; break;
+"328
+[e :U 1019 ]
+[e = _hexval -> -> 53 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 329: case 0x06: hexval= '6'; break;
+"329
+[e :U 1020 ]
+[e = _hexval -> -> 54 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 330: case 0x07: hexval= '7'; break;
+"330
+[e :U 1021 ]
+[e = _hexval -> -> 55 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 331: case 0x08: hexval= '8'; break;
+"331
+[e :U 1022 ]
+[e = _hexval -> -> 56 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 332: case 0x09: hexval= '9'; break;
+"332
+[e :U 1023 ]
+[e = _hexval -> -> 57 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 333: case 0x0A: hexval= 'A'; break;
+"333
+[e :U 1024 ]
+[e = _hexval -> -> 65 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 334: case 0x0B: hexval= 'B'; break;
+"334
+[e :U 1025 ]
+[e = _hexval -> -> 66 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 335: case 0x0C: hexval= 'C'; break;
+"335
+[e :U 1026 ]
+[e = _hexval -> -> 67 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 336: case 0x0D: hexval= 'D'; break;
+"336
+[e :U 1027 ]
+[e = _hexval -> -> 68 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 337: case 0x0E: hexval= 'E'; break;
+"337
+[e :U 1028 ]
+[e = _hexval -> -> 69 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 338: case 0x0F: hexval= 'F'; break;
+"338
+[e :U 1029 ]
+[e = _hexval -> -> 70 `ui `uc ]
+[e $U 1012  ]
+[; ;CommunicationManager.c: 339: default : break;
+"339
+[e :U 1030 ]
+[e $U 1012  ]
+"340
+}
+[; ;CommunicationManager.c: 340: }
+[e $U 1012  ]
+"321
+[e :U 1013 ]
+[e [\ _hexvalue1 , $ -> -> 0 `i `uc 1014
+ , $ -> -> 1 `i `uc 1015
+ , $ -> -> 2 `i `uc 1016
+ , $ -> -> 3 `i `uc 1017
+ , $ -> -> 4 `i `uc 1018
+ , $ -> -> 5 `i `uc 1019
+ , $ -> -> 6 `i `uc 1020
+ , $ -> -> 7 `i `uc 1021
+ , $ -> -> 8 `i `uc 1022
+ , $ -> -> 9 `i `uc 1023
+ , $ -> -> 10 `i `uc 1024
+ , $ -> -> 11 `i `uc 1025
+ , $ -> -> 12 `i `uc 1026
+ , $ -> -> 13 `i `uc 1027
+ , $ -> -> 14 `i `uc 1028
+ , $ -> -> 15 `i `uc 1029
+ 1030 ]
+"340
+[e :U 1012 ]
+[; ;CommunicationManager.c: 341: return hexval;
+"341
+[e ) _hexval ]
+[e $UE 1011  ]
+[; ;CommunicationManager.c: 342: }
+"342
+[e :UE 1011 ]
+}
+"344
+[v _chartovalue `(uc ~T0 @X0 1 ef1`uc ]
+"345
+{
+[; ;CommunicationManager.c: 344: unsigned char chartovalue(unsigned char charNibble)
+[; ;CommunicationManager.c: 345: {
+[e :U _chartovalue ]
+"344
+[v _charNibble `uc ~T0 @X0 1 r1 ]
+"345
+[f ]
+"346
+[v _hexval `uc ~T0 @X0 1 a ]
+[; ;CommunicationManager.c: 346: unsigned char hexval=0x00;
+[e = _hexval -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 347: switch((unsigned char)charNibble)
+"347
+[e $U 1033  ]
+[; ;CommunicationManager.c: 348: {
+"348
+{
+[; ;CommunicationManager.c: 349: case '0': hexval= 0x00; break;
+"349
+[e :U 1034 ]
+[e = _hexval -> -> 0 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 350: case '1': hexval= 0x01; break;
+"350
+[e :U 1035 ]
+[e = _hexval -> -> 1 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 351: case '2': hexval= 0x02; break;
+"351
+[e :U 1036 ]
+[e = _hexval -> -> 2 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 352: case '3': hexval= 0x03; break;
+"352
+[e :U 1037 ]
+[e = _hexval -> -> 3 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 353: case '4': hexval= 0x04; break;
+"353
+[e :U 1038 ]
+[e = _hexval -> -> 4 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 354: case '5': hexval= 0x05; break;
+"354
+[e :U 1039 ]
+[e = _hexval -> -> 5 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 355: case '6': hexval= 0x06; break;
+"355
+[e :U 1040 ]
+[e = _hexval -> -> 6 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 356: case '7': hexval= 0x07; break;
+"356
+[e :U 1041 ]
+[e = _hexval -> -> 7 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 357: case '8': hexval= 0x08; break;
+"357
+[e :U 1042 ]
+[e = _hexval -> -> 8 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 358: case '9': hexval= 0x09; break;
+"358
+[e :U 1043 ]
+[e = _hexval -> -> 9 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 359: case 'A': hexval= 0x0A; break;
+"359
+[e :U 1044 ]
+[e = _hexval -> -> 10 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 360: case 'B': hexval= 0x0B; break;
+"360
+[e :U 1045 ]
+[e = _hexval -> -> 11 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 361: case 'C': hexval= 0x0C; break;
+"361
+[e :U 1046 ]
+[e = _hexval -> -> 12 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 362: case 'D': hexval= 0x0D; break;
+"362
+[e :U 1047 ]
+[e = _hexval -> -> 13 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 363: case 'E': hexval= 0x0E; break;
+"363
+[e :U 1048 ]
+[e = _hexval -> -> 14 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 364: case 'F': hexval= 0x0F; break;
+"364
+[e :U 1049 ]
+[e = _hexval -> -> 15 `i `uc ]
+[e $U 1032  ]
+[; ;CommunicationManager.c: 365: default : break;
+"365
+[e :U 1050 ]
+[e $U 1032  ]
+"366
+}
+[; ;CommunicationManager.c: 366: }
+[e $U 1032  ]
+"347
+[e :U 1033 ]
+[e [\ _charNibble , $ -> -> 48 `ui `uc 1034
+ , $ -> -> 49 `ui `uc 1035
+ , $ -> -> 50 `ui `uc 1036
+ , $ -> -> 51 `ui `uc 1037
+ , $ -> -> 52 `ui `uc 1038
+ , $ -> -> 53 `ui `uc 1039
+ , $ -> -> 54 `ui `uc 1040
+ , $ -> -> 55 `ui `uc 1041
+ , $ -> -> 56 `ui `uc 1042
+ , $ -> -> 57 `ui `uc 1043
+ , $ -> -> 65 `ui `uc 1044
+ , $ -> -> 66 `ui `uc 1045
+ , $ -> -> 67 `ui `uc 1046
+ , $ -> -> 68 `ui `uc 1047
+ , $ -> -> 69 `ui `uc 1048
+ , $ -> -> 70 `ui `uc 1049
+ 1050 ]
+"366
+[e :U 1032 ]
+[; ;CommunicationManager.c: 367: return hexval;
+"367
+[e ) _hexval ]
+[e $UE 1031  ]
+[; ;CommunicationManager.c: 368: }
+"368
+[e :UE 1031 ]
+}
+"370
+[v _char2bytetovalue `(uc ~T0 @X0 1 ef3`uc`uc`*uc ]
+"371
+{
+[; ;CommunicationManager.c: 370: unsigned char char2bytetovalue(unsigned char highBchar,unsigned char LowBchar,unsigned char *cksum)
+[; ;CommunicationManager.c: 371: {
+[e :U _char2bytetovalue ]
+"370
+[v _highBchar `uc ~T0 @X0 1 r1 ]
+[v _LowBchar `uc ~T0 @X0 1 r2 ]
+[v _cksum `*uc ~T0 @X0 1 r3 ]
+"371
+[f ]
+"372
+[v _valuehex `uc ~T0 @X0 1 a ]
+[; ;CommunicationManager.c: 372: unsigned char valuehex;
+[; ;CommunicationManager.c: 374: (*cksum)=(*cksum)+(highBchar+LowBchar);
+"374
+[e = *U _cksum -> + -> *U _cksum `i + -> _highBchar `i -> _LowBchar `i `uc ]
+[; ;CommunicationManager.c: 376: valuehex=(unsigned char)(((chartovalue(highBchar))<<4)& 0xF0)+(chartovalue(LowBchar)& 0x0F);
+"376
+[e = _valuehex -> + -> -> & << -> ( _chartovalue (1 _highBchar `i -> 4 `i -> 240 `i `uc `i & -> ( _chartovalue (1 _LowBchar `i -> 15 `i `uc ]
+[; ;CommunicationManager.c: 377: return valuehex;
+"377
+[e ) _valuehex ]
+[e $UE 1051  ]
+[; ;CommunicationManager.c: 378: }
+"378
+[e :UE 1051 ]
+}
+"379
+[v _char1bytetovalue `(uc ~T0 @X0 1 ef2`uc`*uc ]
+"380
+{
+[; ;CommunicationManager.c: 379: unsigned char char1bytetovalue(unsigned char LowBChar,unsigned char *cksum)
+[; ;CommunicationManager.c: 380: {
+[e :U _char1bytetovalue ]
+"379
+[v _LowBChar `uc ~T0 @X0 1 r1 ]
+[v _cksum `*uc ~T0 @X0 1 r2 ]
+"380
+[f ]
+"381
+[v _valuehex `uc ~T0 @X0 1 a ]
+[; ;CommunicationManager.c: 381: unsigned char valuehex;
+[; ;CommunicationManager.c: 383: (*cksum)=(*cksum)+(LowBChar);
+"383
+[e = *U _cksum -> + -> *U _cksum `i -> _LowBChar `i `uc ]
+[; ;CommunicationManager.c: 385: valuehex=(unsigned char)(chartovalue(LowBChar)& 0x0F);
+"385
+[e = _valuehex -> & -> ( _chartovalue (1 _LowBChar `i -> 15 `i `uc ]
+[; ;CommunicationManager.c: 386: return valuehex;
+"386
+[e ) _valuehex ]
+[e $UE 1052  ]
+[; ;CommunicationManager.c: 387: }
+"387
+[e :UE 1052 ]
+}
+"389
+[v _valuetocharHighNibble `(uc ~T0 @X0 1 ef1`uc ]
+"390
+{
+[; ;CommunicationManager.c: 389: unsigned char valuetocharHighNibble(unsigned char hexvalue)
+[; ;CommunicationManager.c: 390: {
+[e :U _valuetocharHighNibble ]
+"389
+[v _hexvalue `uc ~T0 @X0 1 r1 ]
+"390
+[f ]
+"391
+[v _hexval `uc ~T0 @X0 1 a ]
+[; ;CommunicationManager.c: 391: unsigned char hexval;
+[; ;CommunicationManager.c: 392: hexval=(unsigned char)((unsigned char)(hexvalue>>4) & 0x0F);
+"392
+[e = _hexval -> & -> -> >> -> _hexvalue `i -> 4 `i `uc `i -> 15 `i `uc ]
+[; ;CommunicationManager.c: 393: hexval=valtoasciichar(hexval);
+"393
+[e = _hexval ( _valtoasciichar (1 _hexval ]
+[; ;CommunicationManager.c: 394: return hexval;
+"394
+[e ) _hexval ]
+[e $UE 1053  ]
+[; ;CommunicationManager.c: 396: }
+"396
+[e :UE 1053 ]
+}
+"398
+[v _valuetocharLowNibble `(uc ~T0 @X0 1 ef1`uc ]
+"399
+{
+[; ;CommunicationManager.c: 398: unsigned char valuetocharLowNibble(unsigned char hexvalue)
+[; ;CommunicationManager.c: 399: {
+[e :U _valuetocharLowNibble ]
+"398
+[v _hexvalue `uc ~T0 @X0 1 r1 ]
+"399
+[f ]
+"400
+[v _hexval `uc ~T0 @X0 1 a ]
+[; ;CommunicationManager.c: 400: unsigned char hexval;
+[; ;CommunicationManager.c: 401: hexval=(unsigned char)((unsigned char)(hexvalue) & 0x0F);
+"401
+[e = _hexval -> & -> _hexvalue `i -> 15 `i `uc ]
+[; ;CommunicationManager.c: 402: hexval=valtoasciichar(hexval);
+"402
+[e = _hexval ( _valtoasciichar (1 _hexval ]
+[; ;CommunicationManager.c: 403: return hexval;
+"403
+[e ) _hexval ]
+[e $UE 1054  ]
+[; ;CommunicationManager.c: 404: }
+"404
+[e :UE 1054 ]
+}
+"406
+[v _PackageTxResponseData `(v ~T0 @X0 1 ef3`uc`*uc`uc ]
+"407
+{
+[; ;CommunicationManager.c: 406: void PackageTxResponseData(unsigned char frameType,unsigned char *data,unsigned char dataLen)
+[; ;CommunicationManager.c: 407: {
+[e :U _PackageTxResponseData ]
+"406
+[v _frameType `uc ~T0 @X0 1 r1 ]
+[v _data `*uc ~T0 @X0 1 r2 ]
+[v _dataLen `uc ~T0 @X0 1 r3 ]
+"407
+[f ]
+"409
+[v _i `uc ~T0 @X0 1 a ]
+[; ;CommunicationManager.c: 409: unsigned char i;
+[; ;CommunicationManager.c: 413: if(dataLen==0)
+"413
+[e $ ! == -> _dataLen `i -> 0 `i 1056  ]
+[; ;CommunicationManager.c: 414: {
+"414
+{
+[; ;CommunicationManager.c: 415: PackageTxResponseNACK(frameType);
+"415
+[e ( _PackageTxResponseNACK (1 _frameType ]
+"416
+}
+[; ;CommunicationManager.c: 416: }
+[e $U 1057  ]
+"417
+[e :U 1056 ]
+[; ;CommunicationManager.c: 417: else
+[; ;CommunicationManager.c: 418: {
+"418
+{
+[; ;CommunicationManager.c: 420: EUSART_RX_Disable();
+"420
+[e ( _EUSART_RX_Disable ..  ]
+[; ;CommunicationManager.c: 421: do { LATB6 = 1; } while(0);
+"421
+[e :U 1060 ]
+{
+[e = _LATB6 -> -> 1 `i `b ]
+}
+[e :U 1059 ]
+[; ;CommunicationManager.c: 425: EUSART_TX_Completed();
+"425
+[e ( _EUSART_TX_Completed ..  ]
+[; ;CommunicationManager.c: 429: EUSART_Write('$');
+"429
+[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
+[; ;CommunicationManager.c: 430: EUSART_Write('$');
+"430
+[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
+[; ;CommunicationManager.c: 431: Checksum=0;
+"431
+[e = _Checksum -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 433: EUSART_Write('O');
+"433
+[e ( _EUSART_Write (1 -> -> 79 `ui `uc ]
+[; ;CommunicationManager.c: 434: Checksum+='O';
+"434
+[e =+ _Checksum -> -> 79 `ui `uc ]
+[; ;CommunicationManager.c: 436: if((frameType=='A')||(frameType=='I'))
+"436
+[e $ ! || == -> _frameType `ui -> 65 `ui == -> _frameType `ui -> 73 `ui 1061  ]
+[; ;CommunicationManager.c: 437: {
+"437
+{
+[; ;CommunicationManager.c: 438: txPacketlength=12+(dataLen*2);
+"438
+[e = _txPacketlength -> + -> 12 `i * -> _dataLen `i -> 2 `i `uc ]
+"439
+}
+[; ;CommunicationManager.c: 439: }
+[e $U 1062  ]
+"440
+[e :U 1061 ]
+[; ;CommunicationManager.c: 440: else if(frameType=='r')
+[e $ ! == -> _frameType `ui -> 114 `ui 1063  ]
+[; ;CommunicationManager.c: 441: {
+"441
+{
+[; ;CommunicationManager.c: 442: txPacketlength=13+(dataLen*2);
+"442
+[e = _txPacketlength -> + -> 13 `i * -> _dataLen `i -> 2 `i `uc ]
+"443
+}
+[; ;CommunicationManager.c: 443: }
+[e $U 1064  ]
+"444
+[e :U 1063 ]
+[; ;CommunicationManager.c: 444: else
+[; ;CommunicationManager.c: 445: txPacketlength=11;
+"445
+[e = _txPacketlength -> -> 11 `i `uc ]
+[e :U 1064 ]
+[e :U 1062 ]
+[; ;CommunicationManager.c: 447: highByteChar=valuetocharHighNibble(txPacketlength);
+"447
+[e = _highByteChar ( _valuetocharHighNibble (1 _txPacketlength ]
+[; ;CommunicationManager.c: 448: Checksum+=highByteChar;
+"448
+[e =+ _Checksum _highByteChar ]
+[; ;CommunicationManager.c: 449: lowByteChar=valuetocharLowNibble(txPacketlength);
+"449
+[e = _lowByteChar ( _valuetocharLowNibble (1 _txPacketlength ]
+[; ;CommunicationManager.c: 450: Checksum+=lowByteChar;
+"450
+[e =+ _Checksum _lowByteChar ]
+[; ;CommunicationManager.c: 451: EUSART_Write(highByteChar);
+"451
+[e ( _EUSART_Write (1 _highByteChar ]
+[; ;CommunicationManager.c: 452: EUSART_Write(lowByteChar);
+"452
+[e ( _EUSART_Write (1 _lowByteChar ]
+[; ;CommunicationManager.c: 455: EUSART_Write(frameType);
+"455
+[e ( _EUSART_Write (1 _frameType ]
+[; ;CommunicationManager.c: 456: Checksum+=frameType;
+"456
+[e =+ _Checksum _frameType ]
+[; ;CommunicationManager.c: 458: if((frameType=='A')||(frameType=='I'))
+"458
+[e $ ! || == -> _frameType `ui -> 65 `ui == -> _frameType `ui -> 73 `ui 1065  ]
+[; ;CommunicationManager.c: 459: {
+"459
+{
+[; ;CommunicationManager.c: 460: Checksum+=ChannelNumberChar;
+"460
+[e =+ _Checksum _ChannelNumberChar ]
+[; ;CommunicationManager.c: 461: EUSART_Write(ChannelNumberChar);
+"461
+[e ( _EUSART_Write (1 _ChannelNumberChar ]
+"462
+}
+[; ;CommunicationManager.c: 462: }
+[e $U 1066  ]
+"463
+[e :U 1065 ]
+[; ;CommunicationManager.c: 463: else if(frameType=='r')
+[e $ ! == -> _frameType `ui -> 114 `ui 1067  ]
+[; ;CommunicationManager.c: 464: {
+"464
+{
+[; ;CommunicationManager.c: 465: highByteChar=valuetocharHighNibble(dataLen);
+"465
+[e = _highByteChar ( _valuetocharHighNibble (1 _dataLen ]
+[; ;CommunicationManager.c: 466: Checksum+=highByteChar;
+"466
+[e =+ _Checksum _highByteChar ]
+[; ;CommunicationManager.c: 467: lowByteChar=valuetocharLowNibble(dataLen);
+"467
+[e = _lowByteChar ( _valuetocharLowNibble (1 _dataLen ]
+[; ;CommunicationManager.c: 468: Checksum+=lowByteChar;
+"468
+[e =+ _Checksum _lowByteChar ]
+[; ;CommunicationManager.c: 469: EUSART_Write(highByteChar);
+"469
+[e ( _EUSART_Write (1 _highByteChar ]
+[; ;CommunicationManager.c: 470: EUSART_Write(lowByteChar);
+"470
+[e ( _EUSART_Write (1 _lowByteChar ]
+"471
+}
+[e :U 1067 ]
+"473
+[e :U 1066 ]
+[; ;CommunicationManager.c: 471: }
+[; ;CommunicationManager.c: 473: for(i=0;i<dataLen;i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 1071  ]
+"474
+[e :U 1068 ]
+[; ;CommunicationManager.c: 474: {
+{
+[; ;CommunicationManager.c: 476: highByteChar=valuetocharHighNibble(*(data+i));
+"476
+[e = _highByteChar ( _valuetocharHighNibble (1 *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
+[; ;CommunicationManager.c: 477: Checksum+=highByteChar;
+"477
+[e =+ _Checksum _highByteChar ]
+[; ;CommunicationManager.c: 478: lowByteChar=valuetocharLowNibble(*(data+i));
+"478
+[e = _lowByteChar ( _valuetocharLowNibble (1 *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
+[; ;CommunicationManager.c: 479: Checksum+=lowByteChar;
+"479
+[e =+ _Checksum _lowByteChar ]
+[; ;CommunicationManager.c: 480: EUSART_Write(highByteChar);
+"480
+[e ( _EUSART_Write (1 _highByteChar ]
+[; ;CommunicationManager.c: 481: EUSART_Write(lowByteChar);
+"481
+[e ( _EUSART_Write (1 _lowByteChar ]
+"483
+}
+"473
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1071 ]
+[e $ < -> _i `i -> _dataLen `i 1068  ]
+[e :U 1069 ]
+"483
+}
+[; ;CommunicationManager.c: 483: }
+[; ;CommunicationManager.c: 485: Checksum=(unsigned char)(~Checksum);
+"485
+[e = _Checksum -> ~ -> _Checksum `i `uc ]
+[; ;CommunicationManager.c: 486: highByteChar=valuetocharHighNibble(Checksum);
+"486
+[e = _highByteChar ( _valuetocharHighNibble (1 _Checksum ]
+[; ;CommunicationManager.c: 487: lowByteChar=valuetocharLowNibble(Checksum);
+"487
+[e = _lowByteChar ( _valuetocharLowNibble (1 _Checksum ]
+[; ;CommunicationManager.c: 488: EUSART_Write(highByteChar);
+"488
+[e ( _EUSART_Write (1 _highByteChar ]
+[; ;CommunicationManager.c: 489: EUSART_Write(lowByteChar);
+"489
+[e ( _EUSART_Write (1 _lowByteChar ]
+[; ;CommunicationManager.c: 492: EUSART_Write('#');
+"492
+[e ( _EUSART_Write (1 -> -> 35 `ui `uc ]
+[; ;CommunicationManager.c: 493: EUSART_Write('\r');
+"493
+[e ( _EUSART_Write (1 -> -> 13 `ui `uc ]
+[; ;CommunicationManager.c: 494: EUSART_Write('\n');
+"494
+[e ( _EUSART_Write (1 -> -> 10 `ui `uc ]
+[; ;CommunicationManager.c: 496: EUSART_TX_Completed();
+"496
+[e ( _EUSART_TX_Completed ..  ]
+[; ;CommunicationManager.c: 497: do { LATB6 = 0; } while(0);
+"497
+[e :U 1074 ]
+{
+[e = _LATB6 -> -> 0 `i `b ]
+}
+[e :U 1073 ]
+[; ;CommunicationManager.c: 498: EUSART_RX_Enable();
+"498
+[e ( _EUSART_RX_Enable ..  ]
+"500
+}
+[e :U 1057 ]
+[; ;CommunicationManager.c: 500: }
+[; ;CommunicationManager.c: 501: }
+"501
+[e :UE 1055 ]
+}
+"502
+[v _PackageTxResponseACK `(v ~T0 @X0 1 ef1`uc ]
+"503
+{
+[; ;CommunicationManager.c: 502: void PackageTxResponseACK(unsigned char frameType)
+[; ;CommunicationManager.c: 503: {
+[e :U _PackageTxResponseACK ]
+"502
+[v _frameType `uc ~T0 @X0 1 r1 ]
+"503
+[f ]
+[; ;CommunicationManager.c: 505: EUSART_RX_Disable();
+"505
+[e ( _EUSART_RX_Disable ..  ]
+[; ;CommunicationManager.c: 506: do { LATB6 = 1; } while(0);
+"506
+[e :U 1078 ]
+{
+[e = _LATB6 -> -> 1 `i `b ]
+}
+[e :U 1077 ]
+[; ;CommunicationManager.c: 508: EUSART_TX_Completed();
+"508
+[e ( _EUSART_TX_Completed ..  ]
+[; ;CommunicationManager.c: 510: EUSART_Write('$');
+"510
+[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
+[; ;CommunicationManager.c: 511: EUSART_Write('$');
+"511
+[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
+[; ;CommunicationManager.c: 512: Checksum=0;
+"512
+[e = _Checksum -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 514: EUSART_Write('O');
+"514
+[e ( _EUSART_Write (1 -> -> 79 `ui `uc ]
+[; ;CommunicationManager.c: 515: Checksum+='O';
+"515
+[e =+ _Checksum -> -> 79 `ui `uc ]
+[; ;CommunicationManager.c: 516: txPacketlength=11;
+"516
+[e = _txPacketlength -> -> 11 `i `uc ]
+[; ;CommunicationManager.c: 517: highByteChar=valuetocharHighNibble(txPacketlength);
+"517
+[e = _highByteChar ( _valuetocharHighNibble (1 _txPacketlength ]
+[; ;CommunicationManager.c: 518: Checksum+=highByteChar;
+"518
+[e =+ _Checksum _highByteChar ]
+[; ;CommunicationManager.c: 519: lowByteChar=valuetocharLowNibble(txPacketlength);
+"519
+[e = _lowByteChar ( _valuetocharLowNibble (1 _txPacketlength ]
+[; ;CommunicationManager.c: 520: Checksum+=lowByteChar;
+"520
+[e =+ _Checksum _lowByteChar ]
+[; ;CommunicationManager.c: 521: EUSART_Write(highByteChar);
+"521
+[e ( _EUSART_Write (1 _highByteChar ]
+[; ;CommunicationManager.c: 522: EUSART_Write(lowByteChar);
+"522
+[e ( _EUSART_Write (1 _lowByteChar ]
+[; ;CommunicationManager.c: 524: EUSART_Write(frameType);
+"524
+[e ( _EUSART_Write (1 _frameType ]
+[; ;CommunicationManager.c: 525: Checksum+=frameType;
+"525
+[e =+ _Checksum _frameType ]
+[; ;CommunicationManager.c: 527: Checksum=~Checksum;
+"527
+[e = _Checksum -> ~ -> _Checksum `i `uc ]
+[; ;CommunicationManager.c: 528: highByteChar=valuetocharHighNibble(Checksum);
+"528
+[e = _highByteChar ( _valuetocharHighNibble (1 _Checksum ]
+[; ;CommunicationManager.c: 529: lowByteChar=valuetocharLowNibble(Checksum);
+"529
+[e = _lowByteChar ( _valuetocharLowNibble (1 _Checksum ]
+[; ;CommunicationManager.c: 530: EUSART_Write(highByteChar);
+"530
+[e ( _EUSART_Write (1 _highByteChar ]
+[; ;CommunicationManager.c: 531: EUSART_Write(lowByteChar);
+"531
+[e ( _EUSART_Write (1 _lowByteChar ]
+[; ;CommunicationManager.c: 534: EUSART_Write('#');
+"534
+[e ( _EUSART_Write (1 -> -> 35 `ui `uc ]
+[; ;CommunicationManager.c: 535: EUSART_Write('\r');
+"535
+[e ( _EUSART_Write (1 -> -> 13 `ui `uc ]
+[; ;CommunicationManager.c: 536: EUSART_Write('\n');
+"536
+[e ( _EUSART_Write (1 -> -> 10 `ui `uc ]
+[; ;CommunicationManager.c: 538: EUSART_TX_Completed();
+"538
+[e ( _EUSART_TX_Completed ..  ]
+[; ;CommunicationManager.c: 539: do { LATB6 = 0; } while(0);
+"539
+[e :U 1081 ]
+{
+[e = _LATB6 -> -> 0 `i `b ]
+}
+[e :U 1080 ]
+[; ;CommunicationManager.c: 540: EUSART_RX_Enable();
+"540
+[e ( _EUSART_RX_Enable ..  ]
+[; ;CommunicationManager.c: 541: }
+"541
+[e :UE 1075 ]
+}
+"543
+[v _PackageTxResponseNACK `(v ~T0 @X0 1 ef1`uc ]
+"544
+{
+[; ;CommunicationManager.c: 543: void PackageTxResponseNACK(unsigned char frameType)
+[; ;CommunicationManager.c: 544: {
+[e :U _PackageTxResponseNACK ]
+"543
+[v _frameType `uc ~T0 @X0 1 r1 ]
+"544
+[f ]
+[; ;CommunicationManager.c: 546: EUSART_RX_Disable();
+"546
+[e ( _EUSART_RX_Disable ..  ]
+[; ;CommunicationManager.c: 547: do { LATB6 = 1; } while(0);
+"547
+[e :U 1085 ]
+{
+[e = _LATB6 -> -> 1 `i `b ]
+}
+[e :U 1084 ]
+[; ;CommunicationManager.c: 549: EUSART_TX_Completed();
+"549
+[e ( _EUSART_TX_Completed ..  ]
+[; ;CommunicationManager.c: 551: EUSART_Write('$');
+"551
+[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
+[; ;CommunicationManager.c: 552: EUSART_Write('$');
+"552
+[e ( _EUSART_Write (1 -> -> 36 `ui `uc ]
+[; ;CommunicationManager.c: 553: Checksum=0;
+"553
+[e = _Checksum -> -> 0 `i `uc ]
+[; ;CommunicationManager.c: 555: EUSART_Write('N');
+"555
+[e ( _EUSART_Write (1 -> -> 78 `ui `uc ]
+[; ;CommunicationManager.c: 556: Checksum+='N';
+"556
+[e =+ _Checksum -> -> 78 `ui `uc ]
+[; ;CommunicationManager.c: 557: txPacketlength=11;
+"557
+[e = _txPacketlength -> -> 11 `i `uc ]
+[; ;CommunicationManager.c: 558: highByteChar=valuetocharHighNibble(txPacketlength);
+"558
+[e = _highByteChar ( _valuetocharHighNibble (1 _txPacketlength ]
+[; ;CommunicationManager.c: 559: Checksum+=highByteChar;
+"559
+[e =+ _Checksum _highByteChar ]
+[; ;CommunicationManager.c: 560: lowByteChar=valuetocharLowNibble(txPacketlength);
+"560
+[e = _lowByteChar ( _valuetocharLowNibble (1 _txPacketlength ]
+[; ;CommunicationManager.c: 561: Checksum+=lowByteChar;
+"561
+[e =+ _Checksum _lowByteChar ]
+[; ;CommunicationManager.c: 562: EUSART_Write(highByteChar);
+"562
+[e ( _EUSART_Write (1 _highByteChar ]
+[; ;CommunicationManager.c: 563: EUSART_Write(lowByteChar);
+"563
+[e ( _EUSART_Write (1 _lowByteChar ]
+[; ;CommunicationManager.c: 565: EUSART_Write(frameType);
+"565
+[e ( _EUSART_Write (1 _frameType ]
+[; ;CommunicationManager.c: 566: Checksum+=frameType;
+"566
+[e =+ _Checksum _frameType ]
+[; ;CommunicationManager.c: 568: Checksum=~Checksum;
+"568
+[e = _Checksum -> ~ -> _Checksum `i `uc ]
+[; ;CommunicationManager.c: 569: highByteChar=valuetocharHighNibble(Checksum);
+"569
+[e = _highByteChar ( _valuetocharHighNibble (1 _Checksum ]
+[; ;CommunicationManager.c: 570: lowByteChar=valuetocharLowNibble(Checksum);
+"570
+[e = _lowByteChar ( _valuetocharLowNibble (1 _Checksum ]
+[; ;CommunicationManager.c: 571: EUSART_Write(highByteChar);
+"571
+[e ( _EUSART_Write (1 _highByteChar ]
+[; ;CommunicationManager.c: 572: EUSART_Write(lowByteChar);
+"572
+[e ( _EUSART_Write (1 _lowByteChar ]
+[; ;CommunicationManager.c: 575: EUSART_Write('#');
+"575
+[e ( _EUSART_Write (1 -> -> 35 `ui `uc ]
+[; ;CommunicationManager.c: 576: EUSART_Write('\r');
+"576
+[e ( _EUSART_Write (1 -> -> 13 `ui `uc ]
+[; ;CommunicationManager.c: 577: EUSART_Write('\n');
+"577
+[e ( _EUSART_Write (1 -> -> 10 `ui `uc ]
+[; ;CommunicationManager.c: 579: EUSART_TX_Completed();
+"579
+[e ( _EUSART_TX_Completed ..  ]
+[; ;CommunicationManager.c: 580: do { LATB6 = 0; } while(0);
+"580
+[e :U 1088 ]
+{
+[e = _LATB6 -> -> 0 `i `b ]
+}
+[e :U 1087 ]
+[; ;CommunicationManager.c: 581: EUSART_RX_Enable();
+"581
+[e ( _EUSART_RX_Enable ..  ]
+[; ;CommunicationManager.c: 582: }
+"582
+[e :UE 1082 ]
 }

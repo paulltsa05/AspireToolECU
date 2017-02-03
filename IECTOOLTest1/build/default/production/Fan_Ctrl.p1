@@ -1,31 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"1532 /opt/microchip/xc8/v1.41/include/pic16f18344.h
-[v _T2CON `Vuc ~T0 @X0 0 e@31 ]
-"1513
-[v _PR2 `Vuc ~T0 @X0 0 e@30 ]
-"1494
-[v _TMR2 `Vuc ~T0 @X0 0 e@29 ]
-"553
-[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . TMR1IF TMR2IF BCL1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
-"552
-[u S35 `S36 1 ]
-[n S35 . . ]
-"564
-[v _PIR1bits `VS35 ~T0 @X0 0 e@17 ]
-"132 mcc_generated_files/tmr2.h
-[v _TMR2_StartTimer `(v ~T0 @X0 0 ef ]
-"1538 /opt/microchip/xc8/v1.41/include/pic16f18344.h
-[s S80 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
-[n S80 . T2CKPS TMR2ON T2OUTPS ]
-"1543
-[s S81 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S81 . T2CKPS0 T2CKPS1 . T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 ]
-"1537
-[u S79 `S80 1 `S81 1 ]
-[n S79 . . . ]
-"1553
-[v _T2CONbits `VS79 ~T0 @X0 0 e@31 ]
+"19586 /opt/microchip/xc8/v1.41/include/pic16f18344.h
+[v _LATC6 `Vb ~T0 @X0 0 e@2166 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -7332,6 +7307,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 192: extern unsigned char __resetbits;
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
+[; ;pin_manager.h: 317: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 329: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -7361,6 +7338,45 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;interrupt_manager.h: 111: void interrupt INTERRUPT_InterruptManager(void);
+[; ;adc.h: 72: typedef uint16_t adc_result_t;
+[; ;adc.h: 86: typedef enum
+[; ;adc.h: 87: {
+[; ;adc.h: 88: TEMP_J6_4_ANA2 = 0x2,
+[; ;adc.h: 89: MULTIFUNC_SW_ANC4 = 0x14,
+[; ;adc.h: 90: DIR_SW_ANC5 = 0x15,
+[; ;adc.h: 91: channel_AVSS = 0x3C,
+[; ;adc.h: 92: channel_Temp = 0x3D,
+[; ;adc.h: 93: channel_DAC1 = 0x3E,
+[; ;adc.h: 94: channel_FVR = 0x3F
+[; ;adc.h: 95: } adc_channel_t;
+[; ;adc.h: 130: void ADC_Initialize(void);
+[; ;adc.h: 159: void ADC_StartConversion(adc_channel_t channel);
+[; ;adc.h: 191: bool ADC_IsConversionDone();
+[; ;adc.h: 224: adc_result_t ADC_GetConversionResult(void);
+[; ;adc.h: 254: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[; ;eusart.h: 95: void EUSART_Initialize(void);
+[; ;eusart.h: 115: uint8_t EUSART_Read(void);
+[; ;eusart.h: 135: void EUSART_Write(uint8_t txData);
+[; ;eusart.h: 138: void EUSART_RX_Disable();
+[; ;eusart.h: 139: void EUSART_RX_Enable();
+[; ;eusart.h: 140: void EUSART_TX_Completed();
+[; ;memory.h: 99: uint16_t FLASH_ReadWord(uint16_t flashAddr);
+[; ;memory.h: 128: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
+[; ;memory.h: 164: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
+[; ;memory.h: 189: void FLASH_EraseBlock(uint16_t startAddr);
+[; ;memory.h: 222: void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+[; ;memory.h: 248: uint8_t DATAEE_ReadByte(uint16_t bAdd);
+[; ;pwm5.h: 102: void PWM5_Initialize(void);
+[; ;pwm5.h: 129: void PWM5_LoadDutyValue(uint16_t dutyValue);
+[; ;tmr0.h: 106: void TMR0_Initialize(void);
+[; ;tmr0.h: 135: void TMR0_StartTimer(void);
+[; ;tmr0.h: 167: void TMR0_StopTimer(void);
+[; ;tmr0.h: 202: uint8_t TMR0_Read8bitTimer(void);
+[; ;tmr0.h: 241: void TMR0_Write8bitTimer(uint8_t timerVal);
+[; ;tmr0.h: 278: void TMR0_Load8bitPeriod(uint8_t periodVal);
+[; ;tmr0.h: 297: void TMR0_ISR(void);
+[; ;tmr0.h: 315: void TMR0_CallBack(void);
 [; ;tmr2.h: 103: void TMR2_Initialize(void);
 [; ;tmr2.h: 132: void TMR2_StartTimer(void);
 [; ;tmr2.h: 164: void TMR2_ToggleTimer(void);
@@ -7369,166 +7385,142 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.h: 240: void TMR2_WriteTimer(uint8_t timerVal);
 [; ;tmr2.h: 292: void TMR2_LoadPeriodRegister(uint8_t periodVal);
 [; ;tmr2.h: 327: bool TMR2_HasOverflowOccured(void);
-"58 mcc_generated_files/tmr2.c
-[v _TMR2_Initialize `(v ~T0 @X0 1 ef ]
-"59
+[; ;mcc.h: 74: void SYSTEM_Initialize(void);
+[; ;mcc.h: 87: void OSCILLATOR_Initialize(void);
+[; ;Fan_Ctrl.h: 20: extern char FanStatusBusy(void);
+[; ;Fan_Ctrl.h: 21: extern char FanStartConfig(unsigned char FanONDurationSec);
+[; ;Fan_Ctrl.h: 22: extern void Fan_Control_Sec(void);
+"4 Fan_Ctrl.c
+[v _Fan_ON `uc ~T0 @X0 1 s ]
+[i _Fan_ON
+-> -> 0 `i `uc
+]
+[v _LedON_Duration_sec `uc ~T0 @X0 1 s ]
+[i _LedON_Duration_sec
+-> -> 0 `i `uc
+]
+[v _LED_Sec_Cnt `uc ~T0 @X0 1 s ]
+[i _LED_Sec_Cnt
+-> -> 0 `i `uc
+]
+[; ;Fan_Ctrl.c: 4: static unsigned char Fan_ON=0,LedON_Duration_sec=0, LED_Sec_Cnt=0;
+"6
+[v _FanStatusBusy `(uc ~T0 @X0 1 ef ]
+"7
 {
-[; ;tmr2.c: 58: void TMR2_Initialize(void)
-[; ;tmr2.c: 59: {
-[e :U _TMR2_Initialize ]
+[; ;Fan_Ctrl.c: 6: char FanStatusBusy(void)
+[; ;Fan_Ctrl.c: 7: {
+[e :U _FanStatusBusy ]
 [f ]
-[; ;tmr2.c: 63: T2CON = 0x02;
-"63
-[e = _T2CON -> -> 2 `i `uc ]
-[; ;tmr2.c: 66: PR2 = 0x3F;
-"66
-[e = _PR2 -> -> 63 `i `uc ]
-[; ;tmr2.c: 69: TMR2 = 0x00;
-"69
-[e = _TMR2 -> -> 0 `i `uc ]
-[; ;tmr2.c: 72: PIR1bits.TMR2IF = 0;
-"72
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-[; ;tmr2.c: 75: TMR2_StartTimer();
-"75
-[e ( _TMR2_StartTimer ..  ]
-[; ;tmr2.c: 76: }
-"76
+[; ;Fan_Ctrl.c: 8: return Fan_ON;
+"8
+[e ) _Fan_ON ]
+[e $UE 924  ]
+[; ;Fan_Ctrl.c: 9: }
+"9
 [e :UE 924 ]
 }
-"78
-[v _TMR2_StartTimer `(v ~T0 @X0 1 ef ]
-"79
+"12
+[v _FanStartConfig `(uc ~T0 @X0 1 ef1`uc ]
+"13
 {
-[; ;tmr2.c: 78: void TMR2_StartTimer(void)
-[; ;tmr2.c: 79: {
-[e :U _TMR2_StartTimer ]
+[; ;Fan_Ctrl.c: 12: char FanStartConfig(unsigned char FanONDurationSec)
+[; ;Fan_Ctrl.c: 13: {
+[e :U _FanStartConfig ]
+"12
+[v _FanONDurationSec `uc ~T0 @X0 1 r1 ]
+"13
 [f ]
-[; ;tmr2.c: 81: T2CONbits.TMR2ON = 1;
-"81
-[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-[; ;tmr2.c: 82: }
-"82
+[; ;Fan_Ctrl.c: 14: if(Fan_ON!=1 && (FanONDurationSec!=0)&& (FanONDurationSec <= 60))
+"14
+[e $ ! && && != -> _Fan_ON `i -> 1 `i != -> _FanONDurationSec `i -> 0 `i <= -> _FanONDurationSec `i -> 60 `i 926  ]
+[; ;Fan_Ctrl.c: 15: {
+"15
+{
+[; ;Fan_Ctrl.c: 16: Fan_ON=1;
+"16
+[e = _Fan_ON -> -> 1 `i `uc ]
+[; ;Fan_Ctrl.c: 17: LED_Sec_Cnt=0;
+"17
+[e = _LED_Sec_Cnt -> -> 0 `i `uc ]
+[; ;Fan_Ctrl.c: 18: LedON_Duration_sec=FanONDurationSec;
+"18
+[e = _LedON_Duration_sec _FanONDurationSec ]
+[; ;Fan_Ctrl.c: 19: do { LATC6 = 1; } while(0);
+"19
+[e :U 929 ]
+{
+[e = _LATC6 -> -> 1 `i `b ]
+}
+[e :U 928 ]
+[; ;Fan_Ctrl.c: 20: return 1;
+"20
+[e ) -> -> 1 `i `uc ]
+[e $UE 925  ]
+"21
+}
+[; ;Fan_Ctrl.c: 21: }
+[e $U 930  ]
+"22
+[e :U 926 ]
+[; ;Fan_Ctrl.c: 22: else
+[; ;Fan_Ctrl.c: 23: {
+"23
+{
+[; ;Fan_Ctrl.c: 24: return 0;
+"24
+[e ) -> -> 0 `i `uc ]
+[e $UE 925  ]
+"25
+}
+[e :U 930 ]
+[; ;Fan_Ctrl.c: 25: }
+[; ;Fan_Ctrl.c: 27: }
+"27
 [e :UE 925 ]
 }
-"84
-[v _TMR2_ToggleTimer `(v ~T0 @X0 1 ef ]
-"85
+"30
+[v _Fan_Control_Sec `(v ~T0 @X0 1 ef ]
+"31
 {
-[; ;tmr2.c: 84: void TMR2_ToggleTimer(void)
-[; ;tmr2.c: 85: {
-[e :U _TMR2_ToggleTimer ]
+[; ;Fan_Ctrl.c: 30: void Fan_Control_Sec(void)
+[; ;Fan_Ctrl.c: 31: {
+[e :U _Fan_Control_Sec ]
 [f ]
-[; ;tmr2.c: 87: T2CONbits.TMR2ON ^= 1;
-"87
-[e =^ . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-[; ;tmr2.c: 88: }
-"88
-[e :UE 926 ]
+[; ;Fan_Ctrl.c: 32: if(1==Fan_ON)
+"32
+[e $ ! == -> 1 `i -> _Fan_ON `i 932  ]
+[; ;Fan_Ctrl.c: 33: {
+"33
+{
+[; ;Fan_Ctrl.c: 34: if(LED_Sec_Cnt++ == LedON_Duration_sec)
+"34
+[e $ ! == -> ++ _LED_Sec_Cnt -> -> 1 `i `uc `i -> _LedON_Duration_sec `i 933  ]
+[; ;Fan_Ctrl.c: 35: {
+"35
+{
+[; ;Fan_Ctrl.c: 36: do { LATC6 = 0; } while(0);
+"36
+[e :U 936 ]
+{
+[e = _LATC6 -> -> 0 `i `b ]
 }
-"90
-[v _TMR2_StopTimer `(v ~T0 @X0 1 ef ]
-"91
-{
-[; ;tmr2.c: 90: void TMR2_StopTimer(void)
-[; ;tmr2.c: 91: {
-[e :U _TMR2_StopTimer ]
-[f ]
-[; ;tmr2.c: 93: T2CONbits.TMR2ON = 0;
-"93
-[e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-[; ;tmr2.c: 94: }
-"94
-[e :UE 927 ]
+[e :U 935 ]
+[; ;Fan_Ctrl.c: 37: Fan_ON=0;
+"37
+[e = _Fan_ON -> -> 0 `i `uc ]
+[; ;Fan_Ctrl.c: 38: LED_Sec_Cnt=0;
+"38
+[e = _LED_Sec_Cnt -> -> 0 `i `uc ]
+"39
 }
-"96
-[v _TMR2_ReadTimer `(uc ~T0 @X0 1 ef ]
-"97
-{
-[; ;tmr2.c: 96: uint8_t TMR2_ReadTimer(void)
-[; ;tmr2.c: 97: {
-[e :U _TMR2_ReadTimer ]
-[f ]
-"98
-[v _readVal `uc ~T0 @X0 1 a ]
-[; ;tmr2.c: 98: uint8_t readVal;
-[; ;tmr2.c: 100: readVal = TMR2;
-"100
-[e = _readVal _TMR2 ]
-[; ;tmr2.c: 102: return readVal;
-"102
-[e ) _readVal ]
-[e $UE 928  ]
-[; ;tmr2.c: 103: }
-"103
-[e :UE 928 ]
-}
-"105
-[v _TMR2_WriteTimer `(v ~T0 @X0 1 ef1`uc ]
-"106
-{
-[; ;tmr2.c: 105: void TMR2_WriteTimer(uint8_t timerVal)
-[; ;tmr2.c: 106: {
-[e :U _TMR2_WriteTimer ]
-"105
-[v _timerVal `uc ~T0 @X0 1 r1 ]
-"106
-[f ]
-[; ;tmr2.c: 108: TMR2 = timerVal;
-"108
-[e = _TMR2 _timerVal ]
-[; ;tmr2.c: 109: }
-"109
-[e :UE 929 ]
-}
-"111
-[v _TMR2_LoadPeriodRegister `(v ~T0 @X0 1 ef1`uc ]
-"112
-{
-[; ;tmr2.c: 111: void TMR2_LoadPeriodRegister(uint8_t periodVal)
-[; ;tmr2.c: 112: {
-[e :U _TMR2_LoadPeriodRegister ]
-"111
-[v _periodVal `uc ~T0 @X0 1 r1 ]
-"112
-[f ]
-[; ;tmr2.c: 113: PR2 = periodVal;
-"113
-[e = _PR2 _periodVal ]
-[; ;tmr2.c: 114: }
-"114
-[e :UE 930 ]
-}
-"116
-[v _TMR2_HasOverflowOccured `(uc ~T0 @X0 1 ef ]
-"117
-{
-[; ;tmr2.c: 116: bool TMR2_HasOverflowOccured(void)
-[; ;tmr2.c: 117: {
-[e :U _TMR2_HasOverflowOccured ]
-[f ]
-"119
-[v _status `uc ~T0 @X0 1 a ]
-[; ;tmr2.c: 119: bool status = PIR1bits.TMR2IF;
-[e = _status . . _PIR1bits 0 1 ]
-[; ;tmr2.c: 120: if(status)
-"120
-[e $ ! != -> _status `i -> -> -> 0 `i `uc `i 932  ]
-[; ;tmr2.c: 121: {
-"121
-{
-[; ;tmr2.c: 123: PIR1bits.TMR2IF = 0;
-"123
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"124
+[e :U 933 ]
+"40
 }
 [e :U 932 ]
-[; ;tmr2.c: 124: }
-[; ;tmr2.c: 125: return status;
-"125
-[e ) _status ]
-[e $UE 931  ]
-[; ;tmr2.c: 126: }
-"126
+[; ;Fan_Ctrl.c: 39: }
+[; ;Fan_Ctrl.c: 40: }
+[; ;Fan_Ctrl.c: 41: }
+"41
 [e :UE 931 ]
 }
