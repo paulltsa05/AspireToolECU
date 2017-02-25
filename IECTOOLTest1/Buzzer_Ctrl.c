@@ -44,7 +44,7 @@ void Buzzer_Control_msec(void)
     if(1==Buzzer_ON)//check if Enable
     {   
       
-        if(Buzzer_1msec_Cnt == Bbeep_tickPoint)//toggle timer ON/OFF at beep points msec
+        if(Buzzer_1msec_Cnt >= Bbeep_tickPoint)//toggle timer ON/OFF at beep points msec
         {
             TMR2_WriteTimer(0);
             TMR2_ToggleTimer();
